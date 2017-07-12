@@ -178,15 +178,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         //arc random for a random formation
         var fileString = String()
-        switch(arc4random_uniform(3)+1){
+        switch(arc4random_uniform(1)+1){
         case 1:
-            fileString = "FormationA.sks"
+            fileString = "FormationD.sks"
             break
-        case 2:
-            fileString = "FormationB.sks"
-            break
-        case 3:
-            fileString = "FormationC.sks"
+//        case 2:
+//            fileString = "FormationB.sks"
+//            break
+//        case 3:
+//            fileString = "FormationC.sks"
         default:
             break
         }
