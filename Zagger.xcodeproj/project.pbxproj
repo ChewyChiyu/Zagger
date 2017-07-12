@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		204058D41F16E44C0031A404 /* FormationF.sks in Resources */ = {isa = PBXBuildFile; fileRef = 204058D31F16E44C0031A404 /* FormationF.sks */; };
 		20684F6D1F16C819008144C4 /* FormationD.sks in Resources */ = {isa = PBXBuildFile; fileRef = 20684F6C1F16C819008144C4 /* FormationD.sks */; };
+		20684F6F1F16CF1C008144C4 /* FormationE.sks in Resources */ = {isa = PBXBuildFile; fileRef = 20684F6E1F16CF1C008144C4 /* FormationE.sks */; };
 		20BCC68C1F1536B0006F63F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BCC68B1F1536B0006F63F7 /* AppDelegate.swift */; };
 		20BCC68E1F1536B0006F63F7 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 20BCC68D1F1536B0006F63F7 /* GameScene.sks */; };
 		20BCC6901F1536B0006F63F7 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 20BCC68F1F1536B0006F63F7 /* Actions.sks */; };
@@ -42,7 +44,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		204058D31F16E44C0031A404 /* FormationF.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FormationF.sks; sourceTree = "<group>"; };
 		20684F6C1F16C819008144C4 /* FormationD.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FormationD.sks; sourceTree = "<group>"; };
+		20684F6E1F16CF1C008144C4 /* FormationE.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FormationE.sks; sourceTree = "<group>"; };
 		20BCC6881F1536B0006F63F7 /* Zagger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zagger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20BCC68B1F1536B0006F63F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20BCC68D1F1536B0006F63F7 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -128,6 +132,8 @@
 				20FE6C171F169678001F4440 /* FormationB.sks */,
 				20FE6C191F16A154001F4440 /* FormationC.sks */,
 				20684F6C1F16C819008144C4 /* FormationD.sks */,
+				20684F6E1F16CF1C008144C4 /* FormationE.sks */,
+				204058D31F16E44C0031A404 /* FormationF.sks */,
 			);
 			name = "Editor Files";
 			sourceTree = "<group>";
@@ -306,9 +312,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				20BCC6971F1536B0006F63F7 /* Main.storyboard in Resources */,
+				20684F6F1F16CF1C008144C4 /* FormationE.sks in Resources */,
 				20BCC68E1F1536B0006F63F7 /* GameScene.sks in Resources */,
 				20BCC6991F1536B0006F63F7 /* Assets.xcassets in Resources */,
 				20BCC69C1F1536B0006F63F7 /* LaunchScreen.storyboard in Resources */,
+				204058D41F16E44C0031A404 /* FormationF.sks in Resources */,
 				20FE6C181F169678001F4440 /* FormationB.sks in Resources */,
 				20684F6D1F16C819008144C4 /* FormationD.sks in Resources */,
 				20BCC6901F1536B0006F63F7 /* Actions.sks in Resources */,
