@@ -10,12 +10,12 @@ import SpriteKit
 import GameplayKit
 
 enum gameState{
-    case isLaunched, isStarting, isPlaying
+    case isLaunched, isStarting, isPlaying, isEnding, isRestarting
 }
 enum formations{
     case formationA
 }
-class GameScene: SKScene {
+class GameScene: SKScene, SKPhysicsContactDelegate {
     
     //MARK: Class Variables
     
@@ -37,11 +37,13 @@ class GameScene: SKScene {
             if(snakeDirectionLeft){
                 //thrust snake left
                 particle.particleRotation = CGFloat(Double.pi/4)// 45 degrees
+                snake.zRotation = CGFloat(Double.pi/4)// 45 degrees
                 snake.physicsBody?.velocity = CGVector.zero
                 snake.physicsBody?.applyImpulse(CGVector(dx: -100, dy: 100))
             }else{
                 //thrust snake right
                 particle.particleRotation = -CGFloat(Double.pi/4)
+                snake.zRotation = -CGFloat(Double.pi/4)// 45 degrees
                 snake.physicsBody?.velocity = CGVector.zero
                 snake.physicsBody?.applyImpulse(CGVector(dx: 100, dy: 100))
             }
@@ -61,18 +63,31 @@ class GameScene: SKScene {
             case .isStarting:
                 print("isStarting")
                 //apply vertical impulse to snake
+                snake.alpha = 0 //turning snake invis for trail illusion
+                //applying particle to snake
+                particle = snakeParticle()
+                snake.addChild(particle)
+                //starting up snake
+                snakeDirectionLeft = true
                 DispatchQueue.main.async {
                     self.state = .isPlaying
-                    self.snake.alpha = 0 //turning snake invis for trail illusion
-                    //applying particle to snake
-                    self.particle = self.snakeParticle()
-                    self.snake.addChild(self.particle)
-                    //starting up snake
-                    self.snakeDirectionLeft = true
                 }
                 break
             case .isPlaying:
                 print("isPlaying")
+                break
+            case .isEnding:
+                DispatchQueue.main.async {
+                    self.state = .isRestarting
+                }
+                break
+            case .isRestarting:
+                print("restarting game")
+                
+                //restarting game
+                
+                gameViewController.resetScene()
+                
                 break
             }
         }
@@ -92,10 +107,31 @@ class GameScene: SKScene {
         gameCamera = self.childNode(withName: "Camera") as? SKCameraNode
         self.camera = gameCamera
         
+        //setting physics contact delegate to self
+        self.physicsWorld.contactDelegate  = self
+        
         //setting default formations
         newCurrentFormation()
         newNextFormation()
     }
+    
+    //MARK: Physics contact delegate
+    func didBegin(_ contact: SKPhysicsContact) {
+        let contactPointA = contact.bodyA
+        let contactPointB = contact.bodyB
+        
+        
+        if(contactPointA.node?.name == "Snake" && contactPointB.node?.name == "Obstacle"){
+            //death on contact
+            state = .isEnding
+        }
+        if(contactPointB.node?.name == "Snake" && contactPointA.node?.name == "Obstacle"){
+            //death on contact
+            state = .isEnding
+        }
+    }
+    
+    
     //MARK: Formation functions
     
     func newCurrentFormation(){
@@ -116,6 +152,22 @@ class GameScene: SKScene {
         self.addChild(formation)
         for obstacle in formation.children{
             obstacle.position.y += CGFloat(yPosition)
+            
+            //naming obstacle
+            obstacle.name = "Obstacle"
+            
+            let obstaclePhysics = obstacle as? SKSpriteNode
+            //applying physics to obstacles
+            
+            //bounding rect physics body
+            obstaclePhysics?.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: (obstaclePhysics?.size.width)!, height: (obstaclePhysics?.size.height)!))
+            
+            // no collision but yes contact
+            obstacle.physicsBody?.collisionBitMask = 0
+            obstacle.physicsBody?.contactTestBitMask = UINT32_MAX
+            //no gravity
+            obstacle.physicsBody?.affectedByGravity = false
+            obstacle.physicsBody?.allowsRotation = false
         }
         numberOfFormation+=1 // increasing number of formations
     }
@@ -126,10 +178,15 @@ class GameScene: SKScene {
         
         //arc random for a random formation
         var fileString = String()
-        switch(arc4random_uniform(1)+1){
+        switch(arc4random_uniform(3)+1){
         case 1:
             fileString = "FormationA.sks"
             break
+        case 2:
+            fileString = "FormationB.sks"
+            break
+        case 3:
+            fileString = "FormationC.sks"
         default:
             break
         }
@@ -163,6 +220,7 @@ class GameScene: SKScene {
         snakeRightParticle.particleTexture = SKTexture(imageNamed: "Triangle")
         snakeRightParticle.particleLifetime = 1
         snakeRightParticle.particleBirthRate = 1000
+        snakeRightParticle.particleAlphaSpeed = -1
         snakeRightParticle.name = "Particle"
         return snakeRightParticle
     }

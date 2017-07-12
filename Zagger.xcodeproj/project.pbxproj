@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20684F6D1F16C819008144C4 /* FormationD.sks in Resources */ = {isa = PBXBuildFile; fileRef = 20684F6C1F16C819008144C4 /* FormationD.sks */; };
 		20BCC68C1F1536B0006F63F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BCC68B1F1536B0006F63F7 /* AppDelegate.swift */; };
 		20BCC68E1F1536B0006F63F7 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 20BCC68D1F1536B0006F63F7 /* GameScene.sks */; };
 		20BCC6901F1536B0006F63F7 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 20BCC68F1F1536B0006F63F7 /* Actions.sks */; };
@@ -19,6 +20,8 @@
 		20BCC6B21F1536B0006F63F7 /* ZaggerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BCC6B11F1536B0006F63F7 /* ZaggerUITests.swift */; };
 		20BCC6C31F154019006F63F7 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20BCC6C21F154019006F63F7 /* GameKit.framework */; };
 		20F417B41F15EEF600E8ED36 /* FormationA.sks in Resources */ = {isa = PBXBuildFile; fileRef = 20F417B31F15EEF600E8ED36 /* FormationA.sks */; };
+		20FE6C181F169678001F4440 /* FormationB.sks in Resources */ = {isa = PBXBuildFile; fileRef = 20FE6C171F169678001F4440 /* FormationB.sks */; };
+		20FE6C1A1F16A154001F4440 /* FormationC.sks in Resources */ = {isa = PBXBuildFile; fileRef = 20FE6C191F16A154001F4440 /* FormationC.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		20684F6C1F16C819008144C4 /* FormationD.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FormationD.sks; sourceTree = "<group>"; };
 		20BCC6881F1536B0006F63F7 /* Zagger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zagger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20BCC68B1F1536B0006F63F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20BCC68D1F1536B0006F63F7 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -57,6 +61,8 @@
 		20BCC6B31F1536B0006F63F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20BCC6C21F154019006F63F7 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		20F417B31F15EEF600E8ED36 /* FormationA.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FormationA.sks; sourceTree = "<group>"; };
+		20FE6C171F169678001F4440 /* FormationB.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FormationB.sks; sourceTree = "<group>"; };
+		20FE6C191F16A154001F4440 /* FormationC.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FormationC.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +125,9 @@
 				20BCC68D1F1536B0006F63F7 /* GameScene.sks */,
 				20BCC68F1F1536B0006F63F7 /* Actions.sks */,
 				20F417B31F15EEF600E8ED36 /* FormationA.sks */,
+				20FE6C171F169678001F4440 /* FormationB.sks */,
+				20FE6C191F16A154001F4440 /* FormationC.sks */,
+				20684F6C1F16C819008144C4 /* FormationD.sks */,
 			);
 			name = "Editor Files";
 			sourceTree = "<group>";
@@ -300,8 +309,11 @@
 				20BCC68E1F1536B0006F63F7 /* GameScene.sks in Resources */,
 				20BCC6991F1536B0006F63F7 /* Assets.xcassets in Resources */,
 				20BCC69C1F1536B0006F63F7 /* LaunchScreen.storyboard in Resources */,
+				20FE6C181F169678001F4440 /* FormationB.sks in Resources */,
+				20684F6D1F16C819008144C4 /* FormationD.sks in Resources */,
 				20BCC6901F1536B0006F63F7 /* Actions.sks in Resources */,
 				20F417B41F15EEF600E8ED36 /* FormationA.sks in Resources */,
+				20FE6C1A1F16A154001F4440 /* FormationC.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

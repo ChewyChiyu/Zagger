@@ -51,6 +51,22 @@ class GameViewController: UIViewController, GKGameCenterControllerDelegate {
         authenticateLocalPlayer()
     }
 
+    func resetScene(){
+        if let scene = GameScene(fileNamed:"GameScene") {
+            let view = self.view! as! SKView
+            
+            view.ignoresSiblingOrder = true
+            
+            scene.scaleMode = .aspectFill
+
+            //reapplying gameViewController to self
+            scene.gameViewController = self
+            
+            view.presentScene(scene, transition: SKTransition.fade(withDuration: 2))
+        }
+
+    }
+    
     // MARK: - AUTHENTICATE LOCAL PLAYER
     func authenticateLocalPlayer() {
         let localPlayer: GKLocalPlayer = GKLocalPlayer.localPlayer()
