@@ -25,8 +25,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     //current formation
     var currentFormation : SKNode!
     var nextFormation : SKNode!
-    var numberOfFormation = 0
+    var numberOfFormation = 0{
+        //increasing speed of snake after each formation
+        didSet{
+            if(snakeImpulseContstant < 135){ // max speed is 135-140
+                snakeImpulseContstant += 5
+            }
+            print("making snake faster")
+        }
+    }
     
+    var snakeImpulseContstant = 100
     
     var snake: SKSpriteNode!
     var particle: SKEmitterNode!
@@ -39,18 +48,20 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 particle.particleRotation = CGFloat(Double.pi/4)// 45 degrees
                 snake.zRotation = CGFloat(Double.pi/4)// 45 degrees
                 snake.physicsBody?.velocity = CGVector.zero
-                snake.physicsBody?.applyImpulse(CGVector(dx: -100, dy: 100))
+                snake.physicsBody?.applyImpulse(CGVector(dx: -snakeImpulseContstant, dy: snakeImpulseContstant))
             }else{
                 //thrust snake right
                 particle.particleRotation = -CGFloat(Double.pi/4)
                 snake.zRotation = -CGFloat(Double.pi/4)// 45 degrees
                 snake.physicsBody?.velocity = CGVector.zero
-                snake.physicsBody?.applyImpulse(CGVector(dx: 100, dy: 100))
+                snake.physicsBody?.applyImpulse(CGVector(dx: snakeImpulseContstant, dy: snakeImpulseContstant))
             }
         }
     }
     //camera
     var gameCamera : SKCameraNode!
+    
+    var mainMenu : MainMenu?
     
     
     //MARK: Game state didSet
@@ -59,27 +70,38 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             switch(state){
             case .isLaunched:
                 print("changing gameState to isLaunched")
+                
+                //loading in and handling main menu
+                
+                //main menu scene
+                
+                //MARK: Main Menu
+                if let m = MainMenu(fileNamed: "MainMenu"){
+                    mainMenu = m
+                    mainMenu?.assignVars()
+                    //animate mainMenu
+                    mainMenu?.animateOnScene(scene: self)
+                    
+                }
                 break
             case .isStarting:
                 print("isStarting")
                 //apply vertical impulse to snake
-                snake.alpha = 0 //turning snake invis for trail illusion
                 //applying particle to snake
                 particle = snakeParticle()
                 snake.addChild(particle)
-                //starting up snake
-                snakeDirectionLeft = true
-                DispatchQueue.main.async {
-                    self.state = .isPlaying
-                }
+                //turning snake particle
+                particle.particleRotation = CGFloat(Double.pi/4)
                 break
             case .isPlaying:
                 print("isPlaying")
+                snake.alpha = 0 //turning snake invis for trail illusion
+                //starting up snake
+                snakeDirectionLeft = false
+                
                 break
             case .isEnding:
-                DispatchQueue.main.async {
-                    self.state = .isRestarting
-                }
+                stateChangeToRestart()
                 break
             case .isRestarting:
                 print("restarting game")
@@ -94,6 +116,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     
+    //MARK: State change funcs
+    func stateChangeToRestart(){
+        state = .isRestarting
+    }
+    func stateChangeToPlaying(){
+        state = .isPlaying
+    }
+    func stateChangeToStarting(){
+        state = .isStarting
+    }
     override func didMove(to view: SKView) {
         //MARK: Assigning class variables
         
@@ -211,9 +243,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     //MARK: User input
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        //start up game if isLaunched
-        if(state == .isLaunched){
-            state = .isStarting
+        if(state == .isLaunched && (mainMenu?.animationBool)!){
+            mainMenu?.animateOffScene {
+                self.stateChangeToStarting()
+            }
+        }
+        
+        if(state == .isStarting){
+            stateChangeToPlaying()
         }
         //change snake direction based on taps
         if(state == .isPlaying){
@@ -258,7 +295,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     func removeNodes(){
         //removing obstacles not in camera
-
+        
         for obstacle in currentFormation.children{
             if(obstacle.position.y < snake.position.y - (view?.bounds.height)! * 4){
                 obstacle.removeFromParent()

@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		204058D41F16E44C0031A404 /* FormationF.sks in Resources */ = {isa = PBXBuildFile; fileRef = 204058D31F16E44C0031A404 /* FormationF.sks */; };
+		204058D61F1757A40031A404 /* MainMenu.sks in Resources */ = {isa = PBXBuildFile; fileRef = 204058D51F1757A40031A404 /* MainMenu.sks */; };
+		204058D91F175D940031A404 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204058D81F175D940031A404 /* Button.swift */; };
+		204058DB1F17691D0031A404 /* Information.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204058DA1F17691D0031A404 /* Information.swift */; };
+		204058DD1F1817AF0031A404 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204058DC1F1817AF0031A404 /* MainMenu.swift */; };
 		20684F6D1F16C819008144C4 /* FormationD.sks in Resources */ = {isa = PBXBuildFile; fileRef = 20684F6C1F16C819008144C4 /* FormationD.sks */; };
 		20684F6F1F16CF1C008144C4 /* FormationE.sks in Resources */ = {isa = PBXBuildFile; fileRef = 20684F6E1F16CF1C008144C4 /* FormationE.sks */; };
 		20BCC68C1F1536B0006F63F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BCC68B1F1536B0006F63F7 /* AppDelegate.swift */; };
@@ -45,6 +49,10 @@
 
 /* Begin PBXFileReference section */
 		204058D31F16E44C0031A404 /* FormationF.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FormationF.sks; sourceTree = "<group>"; };
+		204058D51F1757A40031A404 /* MainMenu.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MainMenu.sks; sourceTree = "<group>"; };
+		204058D81F175D940031A404 /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Button.swift; path = "../../TaptoSort/Tap to Sort/Button.swift"; sourceTree = "<group>"; };
+		204058DA1F17691D0031A404 /* Information.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Information.swift; sourceTree = "<group>"; };
+		204058DC1F1817AF0031A404 /* MainMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
 		20684F6C1F16C819008144C4 /* FormationD.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FormationD.sks; sourceTree = "<group>"; };
 		20684F6E1F16CF1C008144C4 /* FormationE.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FormationE.sks; sourceTree = "<group>"; };
 		20BCC6881F1536B0006F63F7 /* Zagger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zagger.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,6 +117,8 @@
 		2008C9EF1F1545770026A29D /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				204058D81F175D940031A404 /* Button.swift */,
+				204058DA1F17691D0031A404 /* Information.swift */,
 				20BCC6981F1536B0006F63F7 /* Assets.xcassets */,
 				20BCC69D1F1536B0006F63F7 /* Info.plist */,
 			);
@@ -119,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				20BCC6911F1536B0006F63F7 /* GameScene.swift */,
+				204058DC1F1817AF0031A404 /* MainMenu.swift */,
 			);
 			name = "Swift Classes";
 			sourceTree = "<group>";
@@ -127,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				20BCC68D1F1536B0006F63F7 /* GameScene.sks */,
+				204058D51F1757A40031A404 /* MainMenu.sks */,
 				20BCC68F1F1536B0006F63F7 /* Actions.sks */,
 				20F417B31F15EEF600E8ED36 /* FormationA.sks */,
 				20FE6C171F169678001F4440 /* FormationB.sks */,
@@ -312,6 +324,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				20BCC6971F1536B0006F63F7 /* Main.storyboard in Resources */,
+				204058D61F1757A40031A404 /* MainMenu.sks in Resources */,
 				20684F6F1F16CF1C008144C4 /* FormationE.sks in Resources */,
 				20BCC68E1F1536B0006F63F7 /* GameScene.sks in Resources */,
 				20BCC6991F1536B0006F63F7 /* Assets.xcassets in Resources */,
@@ -347,8 +360,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				20BCC6921F1536B0006F63F7 /* GameScene.swift in Sources */,
+				204058DD1F1817AF0031A404 /* MainMenu.swift in Sources */,
 				20BCC6941F1536B0006F63F7 /* GameViewController.swift in Sources */,
 				20BCC68C1F1536B0006F63F7 /* AppDelegate.swift in Sources */,
+				204058DB1F17691D0031A404 /* Information.swift in Sources */,
+				204058D91F175D940031A404 /* Button.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -27,10 +27,17 @@ class GameViewController: UIViewController, GKGameCenterControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        //MARK: Loading in game information from saves
+        Information.info.loadInfo()
+        
+        
+        
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
             if let scene = GameScene(fileNamed: "GameScene"){
                 // Set the scale mode to scale to fit the window
+                                
                 scene.scaleMode = .aspectFill
                 
                 //assigning controller to self
@@ -62,7 +69,7 @@ class GameViewController: UIViewController, GKGameCenterControllerDelegate {
             //reapplying gameViewController to self
             scene.gameViewController = self
             
-            view.presentScene(scene, transition: SKTransition.fade(withDuration: 2))
+            view.presentScene(scene, transition: SKTransition.fade(withDuration: 1))
         }
 
     }
