@@ -75,10 +75,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         didSet{
             switch(state){
             case .isLaunched:
-                //loading in and handling main menu
-                
-                //main menu scene
-                
                 //MARK: Main Menu
                 if let m = MainMenu(fileNamed: "MainMenu"){
                     mainMenu = m
@@ -163,6 +159,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let contactPointA = contact.bodyA
         let contactPointB = contact.bodyB
         
+        //snake collisions
         
         if(contactPointA.node?.name == "Snake" && contactPointB.node?.name == "Obstacle"){
             //death on contact
@@ -172,6 +169,25 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             //death on contact
             state = .isEnding
         }
+        
+        //particle collisions with obstacles
+        if(contactPointA.node?.name == "Obstacle" && contactPointB.node?.name == "ChanceParticle"){
+            contactPointB.node?.removeFromParent() // removing partcile
+        }
+        if(contactPointB.node?.name == "Obstacle" && contactPointA.node?.name == "ChanceParticle"){
+            contactPointA.node?.removeFromParent() // removing partcile
+        }
+        
+        //particle collisions with snake
+        if(contactPointA.node?.name == "Snake" && contactPointB.node?.name == "ChanceParticle"){
+            let particle = contactPointB.node as? ChanceParticle
+            particle?.contactedWithSnake()
+        }
+        if(contactPointB.node?.name == "Snake" && contactPointA.node?.name == "ChanceParticle"){
+            let particle = contactPointA.node as? ChanceParticle
+            particle?.contactedWithSnake()
+        }
+        
     }
     
     
@@ -180,12 +196,24 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func newCurrentFormation(){
         currentFormation = buildRandomFormation()
         applyFormation(formation: currentFormation)
+        generateChanceParticles() //chance particle
     }
     
     func newNextFormation(){
         nextFormation = buildRandomFormation()
         applyFormation(formation: nextFormation)
+        generateChanceParticles() //chance particle
     }
+    
+    func generateChanceParticles(){
+        //random num of particles, some will die on spawn via contact with obstacles
+        for _ in 0...Int(arc4random_uniform(4)){ // 1 min , 5 max
+            let newChanceParticle = ChanceParticle(gameScene: self)
+            self.addChild(newChanceParticle)
+            print("adding chance at \(newChanceParticle.position)")
+        }
+    }
+    
     func applyFormation(formation: SKNode){
         //each formation is 9000 pixels long
         

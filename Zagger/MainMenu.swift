@@ -38,7 +38,6 @@ class MainMenu : SKScene{
         audioBlock = self.childNode(withName: "AudioBlock") as? Button
         leaderboardBlock = self.childNode(withName: "LeaderboardBlock") as? Button
         shopBlock = self.childNode(withName: "ShopBlock") as? Button
-        print("passing")
         highscoreLabel = titleBlock.childNode(withName: "Highscore") as? SKLabelNode
         highscoreLabel.text = "Best: \(Information.info.highscore)"
         

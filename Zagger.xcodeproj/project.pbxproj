@@ -14,6 +14,9 @@
 		204058DF1F1898A20031A404 /* MainMenu.sks in Resources */ = {isa = PBXBuildFile; fileRef = 204058DE1F1898A20031A404 /* MainMenu.sks */; };
 		204058E11F18A4DF0031A404 /* RestartMenu.sks in Resources */ = {isa = PBXBuildFile; fileRef = 204058E01F18A4DF0031A404 /* RestartMenu.sks */; };
 		204058E31F18A63D0031A404 /* RestartMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204058E21F18A63D0031A404 /* RestartMenu.swift */; };
+		204058E51F192D8C0031A404 /* ChanceParticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204058E41F192D8C0031A404 /* ChanceParticle.swift */; };
+		204058E71F1934940031A404 /* ChanceParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 204058E61F1934940031A404 /* ChanceParticle.sks */; };
+		204058E91F193E230031A404 /* ChanceParticleExploding.sks in Resources */ = {isa = PBXBuildFile; fileRef = 204058E81F193E230031A404 /* ChanceParticleExploding.sks */; };
 		20684F6D1F16C819008144C4 /* FormationD.sks in Resources */ = {isa = PBXBuildFile; fileRef = 20684F6C1F16C819008144C4 /* FormationD.sks */; };
 		20684F6F1F16CF1C008144C4 /* FormationE.sks in Resources */ = {isa = PBXBuildFile; fileRef = 20684F6E1F16CF1C008144C4 /* FormationE.sks */; };
 		20BCC68C1F1536B0006F63F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BCC68B1F1536B0006F63F7 /* AppDelegate.swift */; };
@@ -57,6 +60,9 @@
 		204058DE1F1898A20031A404 /* MainMenu.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MainMenu.sks; sourceTree = "<group>"; };
 		204058E01F18A4DF0031A404 /* RestartMenu.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = RestartMenu.sks; sourceTree = "<group>"; };
 		204058E21F18A63D0031A404 /* RestartMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestartMenu.swift; sourceTree = "<group>"; };
+		204058E41F192D8C0031A404 /* ChanceParticle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChanceParticle.swift; sourceTree = "<group>"; };
+		204058E61F1934940031A404 /* ChanceParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ChanceParticle.sks; sourceTree = "<group>"; };
+		204058E81F193E230031A404 /* ChanceParticleExploding.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ChanceParticleExploding.sks; sourceTree = "<group>"; };
 		20684F6C1F16C819008144C4 /* FormationD.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FormationD.sks; sourceTree = "<group>"; };
 		20684F6E1F16CF1C008144C4 /* FormationE.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FormationE.sks; sourceTree = "<group>"; };
 		20BCC6881F1536B0006F63F7 /* Zagger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zagger.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,6 +140,7 @@
 			children = (
 				20BCC6911F1536B0006F63F7 /* GameScene.swift */,
 				204058DC1F1817AF0031A404 /* MainMenu.swift */,
+				204058E41F192D8C0031A404 /* ChanceParticle.swift */,
 				204058E21F18A63D0031A404 /* RestartMenu.swift */,
 			);
 			name = "Swift Classes";
@@ -152,6 +159,8 @@
 				20684F6C1F16C819008144C4 /* FormationD.sks */,
 				20684F6E1F16CF1C008144C4 /* FormationE.sks */,
 				204058D31F16E44C0031A404 /* FormationF.sks */,
+				204058E61F1934940031A404 /* ChanceParticle.sks */,
+				204058E81F193E230031A404 /* ChanceParticleExploding.sks */,
 			);
 			name = "Editor Files";
 			sourceTree = "<group>";
@@ -332,6 +341,7 @@
 				20BCC6971F1536B0006F63F7 /* Main.storyboard in Resources */,
 				204058DF1F1898A20031A404 /* MainMenu.sks in Resources */,
 				20684F6F1F16CF1C008144C4 /* FormationE.sks in Resources */,
+				204058E71F1934940031A404 /* ChanceParticle.sks in Resources */,
 				20BCC68E1F1536B0006F63F7 /* GameScene.sks in Resources */,
 				20BCC6991F1536B0006F63F7 /* Assets.xcassets in Resources */,
 				20BCC69C1F1536B0006F63F7 /* LaunchScreen.storyboard in Resources */,
@@ -342,6 +352,7 @@
 				20BCC6901F1536B0006F63F7 /* Actions.sks in Resources */,
 				20F417B41F15EEF600E8ED36 /* FormationA.sks in Resources */,
 				20FE6C1A1F16A154001F4440 /* FormationC.sks in Resources */,
+				204058E91F193E230031A404 /* ChanceParticleExploding.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,6 +382,7 @@
 				20BCC6941F1536B0006F63F7 /* GameViewController.swift in Sources */,
 				204058E31F18A63D0031A404 /* RestartMenu.swift in Sources */,
 				20BCC68C1F1536B0006F63F7 /* AppDelegate.swift in Sources */,
+				204058E51F192D8C0031A404 /* ChanceParticle.swift in Sources */,
 				204058DB1F17691D0031A404 /* Information.swift in Sources */,
 				204058D91F175D940031A404 /* Button.swift in Sources */,
 			);
