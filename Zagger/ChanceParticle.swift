@@ -14,6 +14,7 @@ class ChanceParticle: SKSpriteNode{
     //MARK: Class that gives out a random particle which gives a good or bad effect when contacted
     
     var alreadyContacted: Bool = false
+    var goodChance : Bool = true
     var gameScene : GameScene!
     init(gameScene: GameScene){
         //based off circle texture for core
@@ -47,6 +48,8 @@ class ChanceParticle: SKSpriteNode{
         let particle = SKEmitterNode(fileNamed: "ChanceParticle.sks")
         self.addChild(particle!)
         
+        //setting good or bad chance
+        goodChance = (arc4random_uniform(2)==1) ? true : false // 1 out of 2 chance of good
         
         
     }
@@ -69,10 +72,30 @@ class ChanceParticle: SKSpriteNode{
         self.texture = nil // nil texture , bold square no longer needed
         
         let particleAfterEffect = SKEmitterNode(fileNamed: "ChanceParticleExploding.sks")
+        
+        
+        //setting particle target
         particleAfterEffect?.targetNode = gameScene
+
+        //setting particle color if its good or bad
+        
+        
+        let RED_COLOR = UIColor(colorLiteralRed: 223/255, green: 58/255, blue: 25/255, alpha: 1)
+        let GREEN_COLOR = UIColor(colorLiteralRed: 50/255, green: 245/255, blue: 189/255, alpha: 1)
         
         self.addChild(particleAfterEffect!)
-    
+
+        if(goodChance){
+            particleAfterEffect?.particleColor = GREEN_COLOR
+        }else{
+            particleAfterEffect?.particleColor = RED_COLOR
+        }
+        
+        //so cant ignore color change
+        particleAfterEffect?.particleColorBlendFactor = 1
+        particleAfterEffect?.particleColorSequence = nil
+        
+        
         //removal after animation effect
         self.run(SKAction.wait(forDuration: 1), completion: { // 1 sec animation fade effect
             self.removeFromParent() // self removal
