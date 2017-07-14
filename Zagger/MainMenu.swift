@@ -56,7 +56,6 @@ class MainMenu : SKScene{
         gameScene.addChild(audioBlock)
         gameScene.addChild(leaderboardBlock)
         gameScene.addChild(shopBlock)
-        
         //move sprites off screen // 1500 pixels
         titleBlock.position.x -= 1500
         audioBlock.position.x -= 1500

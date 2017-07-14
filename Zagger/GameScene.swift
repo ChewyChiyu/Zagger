@@ -210,7 +210,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         for _ in 0...Int(arc4random_uniform(4)){ // 1 min , 5 max
             let newChanceParticle = ChanceParticle(gameScene: self)
             self.addChild(newChanceParticle)
-            print("adding chance at \(newChanceParticle.position)")
         }
     }
     
@@ -297,6 +296,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             //increment score
             score+=1
         }
+        
     }
     
     //MARK: Particle Generation

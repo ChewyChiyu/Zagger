@@ -28,9 +28,6 @@ class ChanceParticle: SKSpriteNode{
         //setting name
         super.name = "ChanceParticle"
         
-        //setting z position
-        super.zPosition = 2
-        
         //add physicsBody, collisions enabled so it doesnt get stuck in a obstacle
         super.physicsBody = SKPhysicsBody(circleOfRadius: (self.texture?.size().width)!/2)
         super.physicsBody?.affectedByGravity = false
@@ -49,6 +46,9 @@ class ChanceParticle: SKSpriteNode{
         //attaching particle
         let particle = SKEmitterNode(fileNamed: "ChanceParticle.sks")
         self.addChild(particle!)
+        
+        
+        
     }
     
     func contactedWithSnake(){
@@ -70,10 +70,11 @@ class ChanceParticle: SKSpriteNode{
         
         let particleAfterEffect = SKEmitterNode(fileNamed: "ChanceParticleExploding.sks")
         particleAfterEffect?.targetNode = gameScene
-        self.addChild(particleAfterEffect!)
         
+        self.addChild(particleAfterEffect!)
+    
         //removal after animation effect
-        self.run(SKAction.wait(forDuration: 1), completion: { // 5 sec animation fade effect
+        self.run(SKAction.wait(forDuration: 1), completion: { // 1 sec animation fade effect
             self.removeFromParent() // self removal
         })
     }
