@@ -16,30 +16,47 @@ class MainMenu : SKScene{
     var audioBlock: Button!
     var leaderboardBlock: Button!
     var shopBlock: Button!
-    
+    var highscoreLabel: SKLabelNode!
     var animationBool : Bool = false
     
     //MARK: This class handles the animation and actions of the mainMenu
+    var gameScene: GameScene!
+    func start(scene: GameScene){
+        //starting up menu
+        self.gameScene = scene
+        assignVars()
+        //animate in scene
+        animateOnScene()
+        
+    }
+    
     
     func assignVars(){
         //setting vars
+        
         titleBlock = self.childNode(withName: "TitleBlock") as? SKSpriteNode
         audioBlock = self.childNode(withName: "AudioBlock") as? Button
         leaderboardBlock = self.childNode(withName: "LeaderboardBlock") as? Button
         shopBlock = self.childNode(withName: "ShopBlock") as? Button
+        print("passing")
+        highscoreLabel = titleBlock.childNode(withName: "Highscore") as? SKLabelNode
+        highscoreLabel.text = "Best: \(Information.info.highscore)"
+        
+        
+        
     }
     
-    func animateOnScene(scene: GameScene){
+    func animateOnScene(){
         //remove from current scene
         titleBlock.removeFromParent()
         audioBlock.removeFromParent()
         leaderboardBlock.removeFromParent()
         shopBlock.removeFromParent()
         //attach to scene
-        scene.addChild(titleBlock)
-        scene.addChild(audioBlock)
-        scene.addChild(leaderboardBlock)
-        scene.addChild(shopBlock)
+        gameScene.addChild(titleBlock)
+        gameScene.addChild(audioBlock)
+        gameScene.addChild(leaderboardBlock)
+        gameScene.addChild(shopBlock)
         
         //move sprites off screen // 1500 pixels
         titleBlock.position.x -= 1500
@@ -57,22 +74,31 @@ class MainMenu : SKScene{
                 self.leaderboardBlock.run(SKAction.moveBy(x: 1500, y: 0, duration: 0.2), completion: {
                     self.shopBlock.run(SKAction.moveBy(x: 1500, y: 0, duration: 0.2), completion: {
                         //assign actions to ndoes
-                        self.assignActions(scene: scene)
                         self.animationBool = true // animation has completed
+                        //assign actions
+                        self.assignActions()
                     })
                 })
             })
         })
     }
     
-    func assignActions(scene: GameScene){
+    func assignActions(){
         //handling audio vars
         audioBlock.playAction = {
             let audioOnNode = self.audioBlock.childNode(withName: "AudioOn") as? SKSpriteNode
             audioOnNode?.alpha = (audioOnNode?.alpha==1) ? 0 : 1
             Information.info.soundOn = (audioOnNode?.alpha==1) ? true : false
         }
-        
+        //highscore block
+        leaderboardBlock.playAction = {
+            //check leaderboard
+            if(self.gameScene.gameViewController.gcEnabled){
+                //if gamecenter is enabled send info 
+                self.gameScene.gameViewController.addScoreAndSubmitToGC(score: Information.info.highscore)
+            }
+            self.gameScene.gameViewController.checkGCLeaderboard()
+        }
     }
     
     func animateOffScene(andOnCompletion completion:@escaping ()->()){

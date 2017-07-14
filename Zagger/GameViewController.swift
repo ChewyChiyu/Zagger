@@ -69,7 +69,7 @@ class GameViewController: UIViewController, GKGameCenterControllerDelegate {
             //reapplying gameViewController to self
             scene.gameViewController = self
             
-            view.presentScene(scene, transition: SKTransition.fade(withDuration: 1))
+            view.presentScene(scene, transition: SKTransition.fade(withDuration: 0.5))
         }
 
     }
@@ -95,8 +95,6 @@ class GameViewController: UIViewController, GKGameCenterControllerDelegate {
             } else {
                 // 3. Game center is not enabled on the users device
                 self.gcEnabled = false
-                //print("Local player could not be authenticated!")
-                //print(error!)
             }
         }
     }

@@ -31,12 +31,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             if(snakeImpulseContstant < 135){ // max speed is 135-140
                 snakeImpulseContstant += 5
             }
-            print("making snake faster")
         }
     }
     
     var snakeImpulseContstant = 100
-    
     var snake: SKSpriteNode!
     var particle: SKEmitterNode!
     //Handling the movement of the snake
@@ -60,17 +58,23 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     //camera
     var gameCamera : SKCameraNode!
+    //score
+    var scoreLabel: SKLabelNode!
+    var score: Int64  = 0{
+        didSet{
+            scoreLabel.text = String(score)
+        }
+    }
+    
     
     var mainMenu : MainMenu?
-    
+    var restartMenu: RestartMenu?
     
     //MARK: Game state didSet
     var state : gameState = .isLaunched{
         didSet{
             switch(state){
             case .isLaunched:
-                print("changing gameState to isLaunched")
-                
                 //loading in and handling main menu
                 
                 //main menu scene
@@ -78,38 +82,43 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 //MARK: Main Menu
                 if let m = MainMenu(fileNamed: "MainMenu"){
                     mainMenu = m
-                    mainMenu?.assignVars()
-                    //animate mainMenu
-                    mainMenu?.animateOnScene(scene: self)
-                    
+                    //start up mainMenu
+                    mainMenu?.start(scene: self)
                 }
                 break
             case .isStarting:
-                print("isStarting")
                 //apply vertical impulse to snake
                 //applying particle to snake
                 particle = snakeParticle()
                 snake.addChild(particle)
                 //turning snake particle
                 particle.particleRotation = CGFloat(Double.pi/4)
+                //showing score
+                scoreLabel.alpha = 1
+                
                 break
             case .isPlaying:
-                print("isPlaying")
                 snake.alpha = 0 //turning snake invis for trail illusion
                 //starting up snake
                 snakeDirectionLeft = false
                 
                 break
             case .isEnding:
-                stateChangeToRestart()
+                //stopping all sprites and by setting physicsWorld speed
+                self.physicsWorld.speed = 0
+                //handle highscore
+                if(Information.info.highscore < score){
+                    Information.info.highscore = score
+                }
+                //boot up restart menu
+                if let restart = RestartMenu(fileNamed: "RestartMenu"){
+                    restartMenu = restart
+                    restartMenu?.start(scene: self)
+                }                
                 break
             case .isRestarting:
-                print("restarting game")
-                
                 //restarting game
-                
                 gameViewController.resetScene()
-                
                 break
             }
         }
@@ -137,6 +146,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         nextFormation = SKNode()
         //Setting up camera
         gameCamera = self.childNode(withName: "Camera") as? SKCameraNode
+        scoreLabel = gameCamera.childNode(withName: "Score") as? SKLabelNode
+        scoreLabel.alpha = 0
         self.camera = gameCamera
         
         //setting physics contact delegate to self
@@ -255,6 +266,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         //change snake direction based on taps
         if(state == .isPlaying){
             snakeDirectionLeft = !snakeDirectionLeft
+            //increment score
+            score+=1
         }
     }
     
