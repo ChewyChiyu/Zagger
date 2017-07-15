@@ -76,7 +76,7 @@ class ChanceParticle: SKSpriteNode{
         
         //setting particle target
         particleAfterEffect?.targetNode = gameScene
-
+        
         //setting particle color if its good or bad
         
         
@@ -84,7 +84,7 @@ class ChanceParticle: SKSpriteNode{
         let GREEN_COLOR = UIColor(colorLiteralRed: 50/255, green: 245/255, blue: 189/255, alpha: 1)
         
         self.addChild(particleAfterEffect!)
-
+        
         if(goodChance){
             particleAfterEffect?.particleColor = GREEN_COLOR
         }else{
@@ -106,12 +106,64 @@ class ChanceParticle: SKSpriteNode{
     }
     
     func chanceToSnake(){
-     //MARK: Where the magic happens
-        
-        
+        //MARK: Where the magic happens
+        if(goodChance){
+            //apply good effect if possible
+            applyGoodEffect()
+        }else{
+            //apply bad effect if possible
+            applyBadEffect()
+        }
         
         
         
     }
+    
+    func applyGoodEffect(){
+        switch(arc4random_uniform(2)){
+        case 0:
+            //make snake skinner by 10% if width is greater than 30 pixels
+            if(gameScene.snake.size.width > 30){
+                gameScene.snake.size.width *= 0.9
+                gameScene.particle.particleScale *= 0.9
+            }
+            break
+        case 1:
+            //make snake slower if speed impulse is greater than 50
+            if(gameScene.snakeImpulseContstant > 50){
+                gameScene.snakeImpulseContstant -= 10
+            }
+            break
+        default:
+            break
+        }
+    }
+    func applyBadEffect(){
+        switch(arc4random_uniform(3)){
+        case 0:
+            //make snake larger by 10% if width is less than 150 pixels
+            if(gameScene.snake.size.width < 150 ){
+                gameScene.snake.size.width *= 1.1
+                gameScene.particle.particleScale *= 1.1
+            }
+            break
+        case 1:
+            //make snake faster is snake impulse constant is less than 140
+            if(gameScene.snakeImpulseContstant < 140){
+                gameScene.snakeImpulseContstant += 10
+            }
+            break
+        case 2:
+            //make screen shake for 10 seconds
+            gameScene.shakeCamera(layer: gameScene.currentFormation, duration: 10, ampX: 120, ampY: 40)
+            gameScene.shakeCamera(layer:  gameScene.nextFormation, duration: 10, ampX: 120, ampY: 40)
+            gameScene.shakeCamera(layer:  gameScene.particle, duration: 10, ampX: 120, ampY: 40)
+            break
+        default:
+            break
+        }
+    }
+    
+    
     
 }

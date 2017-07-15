@@ -29,8 +29,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         //increasing speed of snake after each formation
         didSet{
             if(snakeImpulseContstant < 140){ // max speed is 70-150
-                snakeImpulseContstant += 5
-                print("incrementing speed")
+                snakeImpulseContstant += 10
             }
         }
     }
@@ -101,12 +100,22 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 
                 break
             case .isEnding:
+                
+                //removing all actions if any
+                particle.removeAllActions()
+                currentFormation.removeAllActions()
+                nextFormation.removeAllActions()
+                
                 //stopping all sprites and by setting physicsWorld speed
                 self.physicsWorld.speed = 0
                 //handle highscore
                 if(Information.info.highscore < score){
                     Information.info.highscore = score
                 }
+                //shake the camera a bit
+                shakeCamera(layer: currentFormation, duration: 0.2, ampX: 60, ampY: 30)
+                shakeCamera(layer: nextFormation, duration: 0.2, ampX: 60, ampY: 30)
+                
                 //boot up restart menu
                 if let restart = RestartMenu(fileNamed: "RestartMenu"){
                     restartMenu = restart
@@ -349,4 +358,24 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             }
         }
     }
+    func shakeCamera(layer:SKNode, duration:Float, ampX: Float, ampY: Float) {
+        //code taken from internet
+        let amplitudeX:Float = ampX;
+        let amplitudeY:Float = ampY;
+        let numberOfShakes = duration / 0.04;
+        var actionsArray:[SKAction] = [];
+        for _ in 1...Int(numberOfShakes) {
+            let moveX = Float(arc4random_uniform(UInt32(amplitudeX))) - amplitudeX / 2;
+            let moveY = Float(arc4random_uniform(UInt32(amplitudeY))) - amplitudeY / 2;
+            let shakeAction = SKAction.moveBy(x: CGFloat(moveX), y: CGFloat(moveY), duration: 0.02);
+            shakeAction.timingMode = SKActionTimingMode.easeOut;
+            actionsArray.append(shakeAction);
+            actionsArray.append(shakeAction.reversed());
+        }
+        
+        let actionSeq = SKAction.sequence(actionsArray);
+        layer.run(actionSeq);
+    }
+    
+
 }
