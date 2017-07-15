@@ -60,8 +60,8 @@ class RestartMenu : SKScene{
     func assignActions(){
         restartBlock.playAction = {
             //animate off scene
-            self.scoreBlock.run(SKAction.moveBy(x: 1500, y: 0, duration: 0.2), completion: {
-                self.restartBlock.run(SKAction.moveBy(x: 1500, y: 0, duration: 0.2), completion: {
+            self.scoreBlock.run(SKAction.moveBy(x: 1500, y: 0, duration: 0.1), completion: {
+                self.restartBlock.run(SKAction.moveBy(x: 1500, y: 0, duration: 0.1), completion: {
                     //animation off has finished
                     //setting gameScene state to isRestarting
                     self.gameScene.stateChangeToRestart()

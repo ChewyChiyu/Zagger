@@ -67,10 +67,10 @@ class MainMenu : SKScene{
         
         
         //move sprites with time delay for animation effect in order from top to bottom
-        titleBlock.run(SKAction.moveBy(x: 1500, y: 0, duration: 0.2), completion: {
-            self.audioBlock.run(SKAction.moveBy(x: 1500, y: 0, duration: 0.2), completion: {
-                self.leaderboardBlock.run(SKAction.moveBy(x: 1500, y: 0, duration: 0.2), completion: {
-                    self.shopBlock.run(SKAction.moveBy(x: 1500, y: 0, duration: 0.2), completion: {
+        titleBlock.run(SKAction.moveBy(x: 1500, y: 0, duration: 0.15), completion: {
+            self.audioBlock.run(SKAction.moveBy(x: 1500, y: 0, duration: 0.15), completion: {
+                self.leaderboardBlock.run(SKAction.moveBy(x: 1500, y: 0, duration: 0.15), completion: {
+                    self.shopBlock.run(SKAction.moveBy(x: 1500, y: 0, duration: 0.15), completion: {
                         //assign actions to ndoes
                         self.animationBool = true // animation has completed
                         //assign actions
@@ -102,11 +102,11 @@ class MainMenu : SKScene{
     func animateOffScene(andOnCompletion completion:@escaping ()->()){
         titleBlock.run(SKAction.moveBy(x: 1500, y: 0, duration: 0.15), completion: {
             self.titleBlock.removeFromParent()
-            self.audioBlock.run(SKAction.moveBy(x: 1500, y: 0, duration: 0.15), completion: {
+            self.audioBlock.run(SKAction.moveBy(x: 1500, y: 0, duration: 0.1), completion: {
                 self.audioBlock.removeFromParent()
-                self.leaderboardBlock.run(SKAction.moveBy(x: 1500, y: 0, duration: 0.15), completion: {
+                self.leaderboardBlock.run(SKAction.moveBy(x: 1500, y: 0, duration: 0.1), completion: {
                     self.leaderboardBlock.removeFromParent()
-                    self.shopBlock.run(SKAction.moveBy(x: 1500, y: 0, duration: 0.15), completion: {
+                    self.shopBlock.run(SKAction.moveBy(x: 1500, y: 0, duration: 0.1), completion: {
                         self.shopBlock.removeFromParent()
                         //animations have finished
                         completion()

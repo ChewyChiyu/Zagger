@@ -69,7 +69,7 @@ class GameViewController: UIViewController, GKGameCenterControllerDelegate {
             //reapplying gameViewController to self
             scene.gameViewController = self
             
-            view.presentScene(scene, transition: SKTransition.fade(withDuration: 0.5))
+            view.presentScene(scene, transition: SKTransition.fade(withDuration: 0.3))
         }
 
     }

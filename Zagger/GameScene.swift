@@ -28,13 +28,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var numberOfFormation = 0{
         //increasing speed of snake after each formation
         didSet{
-            if(snakeImpulseContstant < 135){ // max speed is 135-140
+            if(snakeImpulseContstant < 140){ // max speed is 70-150
                 snakeImpulseContstant += 5
+                print("incrementing speed")
             }
         }
     }
     
-    var snakeImpulseContstant = 100
+    var snakeImpulseContstant = 70
     var snake: SKSpriteNode!
     var particle: SKEmitterNode!
     //Handling the movement of the snake
