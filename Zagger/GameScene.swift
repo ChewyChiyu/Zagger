@@ -153,6 +153,20 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         state = .isLaunched
         
         snake = self.childNode(withName: "Snake") as? SKSpriteNode
+        
+        if(Information.info.mainColorWhite){
+            snake.color = UIColor.white
+            self.backgroundColor = UIColor.black
+        }else{
+            snake.color = UIColor.black
+            self.backgroundColor = UIColor.white
+        }
+        
+        //so cant ignore color change
+        snake.colorBlendFactor = 1
+        
+        
+        
         currentFormation = SKNode()
         nextFormation = SKNode()
         //Setting up camera
@@ -242,6 +256,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             obstacle.name = "Obstacle"
             
             let obstaclePhysics = obstacle as? SKSpriteNode
+            
+            //coloring obstacle
+            if(Information.info.mainColorWhite){
+                obstaclePhysics?.color = UIColor.white
+            }else{
+                obstaclePhysics?.color = UIColor.black
+            }
+            
+            obstaclePhysics?.colorBlendFactor = 1
+            
             //applying physics to obstacles
             
             //bounding rect physics body
@@ -320,6 +344,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let snakeRightParticle = SKEmitterNode()
         snakeRightParticle.targetNode = self
         snakeRightParticle.particleTexture = SKTexture(imageNamed: "Triangle")
+        
+        if(Information.info.mainColorWhite){
+            snakeRightParticle.particleColor = UIColor.white
+        }else{
+            snakeRightParticle.particleColor = UIColor.black
+        }
+        
+        snakeRightParticle.particleColorBlendFactor = 1
+        snakeRightParticle.particleColorSequence = nil
+        
         snakeRightParticle.particleLifetime = 1
         snakeRightParticle.particleBirthRate = 1000
         snakeRightParticle.particleAlphaSpeed = -1

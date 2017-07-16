@@ -15,6 +15,7 @@ class MainMenu : SKScene{
     var titleBlock: SKSpriteNode!
     var audioBlock: Button!
     var leaderboardBlock: Button!
+    var colorBlock: Button!
     var highscoreLabel: SKLabelNode!
     var animationBool : Bool = false
     
@@ -36,6 +37,7 @@ class MainMenu : SKScene{
         titleBlock = self.childNode(withName: "TitleBlock") as? SKSpriteNode
         audioBlock = self.childNode(withName: "AudioBlock") as? Button
         leaderboardBlock = self.childNode(withName: "LeaderboardBlock") as? Button
+        colorBlock = self.childNode(withName: "ColorBlock") as? Button
         highscoreLabel = titleBlock.childNode(withName: "Highscore") as? SKLabelNode
         highscoreLabel.text = "Best: \(Information.info.highscore)"
     }
@@ -45,15 +47,17 @@ class MainMenu : SKScene{
         titleBlock.removeFromParent()
         audioBlock.removeFromParent()
         leaderboardBlock.removeFromParent()
+        colorBlock.removeFromParent()
         //attach to scene
         gameScene.addChild(titleBlock)
         gameScene.addChild(audioBlock)
+        gameScene.addChild(colorBlock)
         gameScene.addChild(leaderboardBlock)
         //move sprites off screen // 1500 pixels
         titleBlock.position.x -= 1500
         audioBlock.position.x -= 1500
         leaderboardBlock.position.x -= 1500
-        
+        colorBlock.position.x -= 1500
         //load audio information from save
         audioBlock.childNode(withName: "AudioOn")?.alpha = (Information.info.soundOn) ? 1 : 0
         
@@ -62,10 +66,12 @@ class MainMenu : SKScene{
         titleBlock.run(SKAction.moveBy(x: 1500, y: 0, duration: 0.15), completion: {
             self.audioBlock.run(SKAction.moveBy(x: 1500, y: 0, duration: 0.15), completion: {
                 self.leaderboardBlock.run(SKAction.moveBy(x: 1500, y: 0, duration: 0.15), completion: {
+                    self.colorBlock.run(SKAction.moveBy(x: 1500, y: 0, duration: 0.15), completion: {
                         //assign actions to ndoes
                         self.animationBool = true // animation has completed
                         //assign actions
                         self.assignActions()
+                    })
                 })
             })
         })
@@ -87,6 +93,14 @@ class MainMenu : SKScene{
             }
             self.gameScene.gameViewController.checkGCLeaderboard()
         }
+        //color block
+        colorBlock.playAction = {
+            Information.info.mainColorWhite = !Information.info.mainColorWhite
+            
+            //inverting colors with a scene reset
+            self.gameScene.gameViewController.resetScene()
+            
+        }
     }
     
     func animateOffScene(andOnCompletion completion:@escaping ()->()){
@@ -95,9 +109,12 @@ class MainMenu : SKScene{
             self.audioBlock.run(SKAction.moveBy(x: 1500, y: 0, duration: 0.1), completion: {
                 self.audioBlock.removeFromParent()
                 self.leaderboardBlock.run(SKAction.moveBy(x: 1500, y: 0, duration: 0.1), completion: {
-                    self.leaderboardBlock.removeFromParent()
-                    //animations have finished
-                    completion()
+                    self.colorBlock.run(SKAction.moveBy(x: 1500, y: 0, duration: 0.1), completion: {
+                        self.colorBlock.removeFromParent()
+                        //animations have finished
+                        completion()
+                        
+                    })
                 })
             })
         })

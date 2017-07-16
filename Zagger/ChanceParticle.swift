@@ -48,6 +48,19 @@ class ChanceParticle: SKSpriteNode{
         let particle = SKEmitterNode(fileNamed: "ChanceParticle.sks")
         self.addChild(particle!)
         
+        //setting particle color
+        
+        if(Information.info.mainColorWhite){
+            particle?.particleColor = UIColor.black
+        }else{
+            particle?.particleColor = UIColor.white
+        }
+        
+        //so cant ignore color change
+        particle?.particleColorBlendFactor = 1
+        particle?.particleColorSequence = nil
+
+        
         //setting good or bad chance
         goodChance = (arc4random_uniform(2)==1) ? true : false // 1 out of 2 chance of good
         

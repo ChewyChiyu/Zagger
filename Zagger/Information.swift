@@ -40,6 +40,12 @@ struct Information{
         }
     }
     
+    var mainColorWhite: Bool = true{
+        didSet{
+            //saving this info
+            UserDefaults.standard.set(mainColorWhite, forKey: "mainColorWhite")
+        }
+    }
     mutating func loadInfo(){
         
         //loading in if audio is on
@@ -53,7 +59,11 @@ struct Information{
             highscore = high as! Int64
         }
         
-        
+        //load color
+        if let color = UserDefaults.standard.value(forKey: "mainColorWhite"){
+            mainColorWhite = color as! Bool
+        }
+
         
     }
     //MARK : In Game Audio play funcs
