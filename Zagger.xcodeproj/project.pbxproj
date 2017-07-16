@@ -30,12 +30,12 @@
 		20BCC6A71F1536B0006F63F7 /* ZaggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BCC6A61F1536B0006F63F7 /* ZaggerTests.swift */; };
 		20BCC6B21F1536B0006F63F7 /* ZaggerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BCC6B11F1536B0006F63F7 /* ZaggerUITests.swift */; };
 		20BCC6C31F154019006F63F7 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20BCC6C21F154019006F63F7 /* GameKit.framework */; };
-		20C41D861F1B391A0014F276 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 20C41D851F1B391A0014F276 /* GoogleService-Info.plist */; };
 		20C41D8C1F1B39270014F276 /* BadChance.wav in Resources */ = {isa = PBXBuildFile; fileRef = 20C41D871F1B39270014F276 /* BadChance.wav */; };
 		20C41D8D1F1B39270014F276 /* GameOver.wav in Resources */ = {isa = PBXBuildFile; fileRef = 20C41D881F1B39270014F276 /* GameOver.wav */; };
 		20C41D8E1F1B39270014F276 /* GoodChance.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 20C41D891F1B39270014F276 /* GoodChance.mp3 */; };
 		20C41D8F1F1B39270014F276 /* SnakeMove.wav in Resources */ = {isa = PBXBuildFile; fileRef = 20C41D8A1F1B39270014F276 /* SnakeMove.wav */; };
 		20C41D901F1B39270014F276 /* SnakeMoveA.wav in Resources */ = {isa = PBXBuildFile; fileRef = 20C41D8B1F1B39270014F276 /* SnakeMoveA.wav */; };
+		20C41D9C1F1B4BC40014F276 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 20C41D9B1F1B4BC40014F276 /* GoogleService-Info.plist */; };
 		20F417B41F15EEF600E8ED36 /* FormationA.sks in Resources */ = {isa = PBXBuildFile; fileRef = 20F417B31F15EEF600E8ED36 /* FormationA.sks */; };
 		20FE6C181F169678001F4440 /* FormationB.sks in Resources */ = {isa = PBXBuildFile; fileRef = 20FE6C171F169678001F4440 /* FormationB.sks */; };
 		20FE6C1A1F16A154001F4440 /* FormationC.sks in Resources */ = {isa = PBXBuildFile; fileRef = 20FE6C191F16A154001F4440 /* FormationC.sks */; };
@@ -92,12 +92,12 @@
 		20BCC6B11F1536B0006F63F7 /* ZaggerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZaggerUITests.swift; sourceTree = "<group>"; };
 		20BCC6B31F1536B0006F63F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20BCC6C21F154019006F63F7 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
-		20C41D851F1B391A0014F276 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		20C41D871F1B39270014F276 /* BadChance.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = BadChance.wav; sourceTree = "<group>"; };
 		20C41D881F1B39270014F276 /* GameOver.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = GameOver.wav; sourceTree = "<group>"; };
 		20C41D891F1B39270014F276 /* GoodChance.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = GoodChance.mp3; sourceTree = "<group>"; };
 		20C41D8A1F1B39270014F276 /* SnakeMove.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = SnakeMove.wav; sourceTree = "<group>"; };
 		20C41D8B1F1B39270014F276 /* SnakeMoveA.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = SnakeMoveA.wav; sourceTree = "<group>"; };
+		20C41D9B1F1B4BC40014F276 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Desktop/IOS APP FIREBASE API KEYS/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		20F417B31F15EEF600E8ED36 /* FormationA.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FormationA.sks; sourceTree = "<group>"; };
 		20FE6C171F169678001F4440 /* FormationB.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FormationB.sks; sourceTree = "<group>"; };
 		20FE6C191F16A154001F4440 /* FormationC.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FormationC.sks; sourceTree = "<group>"; };
@@ -154,7 +154,7 @@
 		2008C9EF1F1545770026A29D /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				20C41D851F1B391A0014F276 /* GoogleService-Info.plist */,
+				20C41D9B1F1B4BC40014F276 /* GoogleService-Info.plist */,
 				20C41D871F1B39270014F276 /* BadChance.wav */,
 				20C41D881F1B39270014F276 /* GameOver.wav */,
 				20C41D891F1B39270014F276 /* GoodChance.mp3 */,
@@ -409,7 +409,6 @@
 				204058D41F16E44C0031A404 /* FormationF.sks in Resources */,
 				20FE6C181F169678001F4440 /* FormationB.sks in Resources */,
 				20C41D8C1F1B39270014F276 /* BadChance.wav in Resources */,
-				20C41D861F1B391A0014F276 /* GoogleService-Info.plist in Resources */,
 				20C41D901F1B39270014F276 /* SnakeMoveA.wav in Resources */,
 				20684F6D1F16C819008144C4 /* FormationD.sks in Resources */,
 				204058E11F18A4DF0031A404 /* RestartMenu.sks in Resources */,
@@ -418,6 +417,7 @@
 				20F417B41F15EEF600E8ED36 /* FormationA.sks in Resources */,
 				20FE6C1A1F16A154001F4440 /* FormationC.sks in Resources */,
 				204058E91F193E230031A404 /* ChanceParticleExploding.sks in Resources */,
+				20C41D9C1F1B4BC40014F276 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
