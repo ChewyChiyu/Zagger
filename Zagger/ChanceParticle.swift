@@ -110,9 +110,13 @@ class ChanceParticle: SKSpriteNode{
         if(goodChance){
             //apply good effect if possible
             applyGoodEffect()
+            //play sound
+            Information.info.playGoodChanceSound(scene: gameScene)
         }else{
             //apply bad effect if possible
             applyBadEffect()
+            //play sound
+            Information.info.playBadChanceSound(scene: gameScene)
         }
         
         

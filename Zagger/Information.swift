@@ -7,11 +7,23 @@
 //
 
 import Foundation
-
+import SpriteKit
 struct Information{
     
     //MARK: Purpose of this struct is to save information
     static var info = Information() // static
+    
+    
+    //In Game Sound actions
+    let moveSound = SKAction.playSoundFileNamed("SnakeMove.wav", waitForCompletion: false)
+    
+     let moveSoundA = SKAction.playSoundFileNamed("SnakeMoveA.wav", waitForCompletion: false)
+    
+    let gameOverSound = SKAction.playSoundFileNamed("GameOver.wav", waitForCompletion: false)
+    
+    let goodChanceSound = SKAction.playSoundFileNamed("GoodChance.mp3", waitForCompletion: false)
+    
+    let badChanceSound = SKAction.playSoundFileNamed("BadChance.wav", waitForCompletion: false)
     
     //controller of sound
     var soundOn: Bool = true{
@@ -40,6 +52,38 @@ struct Information{
         if let high = UserDefaults.standard.value(forKey: "highscore"){
             highscore = high as! Int64
         }
+        
+        
+        
+    }
+    //MARK : In Game Audio play funcs
+    func playSnakeSound(scene: GameScene){
+        if(soundOn){
+        scene.run(moveSound)
+        }
     }
     
+    func playSnakeSoundA(scene: GameScene){
+        if(soundOn){
+            scene.run(moveSoundA)
+        }
+    }
+    
+    func playGameOverSound(scene: GameScene){
+        if(soundOn){
+            scene.run(gameOverSound)
+        }
+    }
+    
+    func playGoodChanceSound(scene: GameScene){
+        if(soundOn){
+            scene.run(goodChanceSound)
+        }
+    }
+    
+    func playBadChanceSound(scene: GameScene){
+        if(soundOn){
+            scene.run(badChanceSound)
+        }
+    }
 }

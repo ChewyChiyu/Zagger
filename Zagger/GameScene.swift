@@ -47,12 +47,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 snake.zRotation = CGFloat(Double.pi/4)// 45 degrees
                 snake.physicsBody?.velocity = CGVector.zero
                 snake.physicsBody?.applyImpulse(CGVector(dx: -snakeImpulseContstant, dy: snakeImpulseContstant))
+                //play sound if possible
+                Information.info.playSnakeSound(scene: self)
             }else{
                 //thrust snake right
                 particle.particleRotation = -CGFloat(Double.pi/4)
                 snake.zRotation = -CGFloat(Double.pi/4)// 45 degrees
                 snake.physicsBody?.velocity = CGVector.zero
                 snake.physicsBody?.applyImpulse(CGVector(dx: snakeImpulseContstant, dy: snakeImpulseContstant))
+                //play sound if possible
+                Information.info.playSnakeSoundA(scene: self)
             }
         }
     }
@@ -69,7 +73,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var mainMenu : MainMenu?
     var restartMenu: RestartMenu?
-    
     //MARK: Game state didSet
     var state : gameState = .isLaunched{
         didSet{
@@ -96,10 +99,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             case .isPlaying:
                 snake.alpha = 0 //turning snake invis for trail illusion
                 //starting up snake
-                snakeDirectionLeft = false
                 
                 break
             case .isEnding:
+                //playing gameOverSound
+                
+                Information.info.playGameOverSound(scene: self)
                 
                 //removing all actions if any
                 particle.removeAllActions()

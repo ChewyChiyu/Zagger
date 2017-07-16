@@ -15,7 +15,6 @@ class MainMenu : SKScene{
     var titleBlock: SKSpriteNode!
     var audioBlock: Button!
     var leaderboardBlock: Button!
-    var shopBlock: Button!
     var highscoreLabel: SKLabelNode!
     var animationBool : Bool = false
     
@@ -37,12 +36,8 @@ class MainMenu : SKScene{
         titleBlock = self.childNode(withName: "TitleBlock") as? SKSpriteNode
         audioBlock = self.childNode(withName: "AudioBlock") as? Button
         leaderboardBlock = self.childNode(withName: "LeaderboardBlock") as? Button
-        shopBlock = self.childNode(withName: "ShopBlock") as? Button
         highscoreLabel = titleBlock.childNode(withName: "Highscore") as? SKLabelNode
         highscoreLabel.text = "Best: \(Information.info.highscore)"
-        
-        
-        
     }
     
     func animateOnScene(){
@@ -50,17 +45,14 @@ class MainMenu : SKScene{
         titleBlock.removeFromParent()
         audioBlock.removeFromParent()
         leaderboardBlock.removeFromParent()
-        shopBlock.removeFromParent()
         //attach to scene
         gameScene.addChild(titleBlock)
         gameScene.addChild(audioBlock)
         gameScene.addChild(leaderboardBlock)
-        gameScene.addChild(shopBlock)
         //move sprites off screen // 1500 pixels
         titleBlock.position.x -= 1500
         audioBlock.position.x -= 1500
         leaderboardBlock.position.x -= 1500
-        shopBlock.position.x -= 1500
         
         //load audio information from save
         audioBlock.childNode(withName: "AudioOn")?.alpha = (Information.info.soundOn) ? 1 : 0
@@ -70,12 +62,10 @@ class MainMenu : SKScene{
         titleBlock.run(SKAction.moveBy(x: 1500, y: 0, duration: 0.15), completion: {
             self.audioBlock.run(SKAction.moveBy(x: 1500, y: 0, duration: 0.15), completion: {
                 self.leaderboardBlock.run(SKAction.moveBy(x: 1500, y: 0, duration: 0.15), completion: {
-                    self.shopBlock.run(SKAction.moveBy(x: 1500, y: 0, duration: 0.15), completion: {
                         //assign actions to ndoes
                         self.animationBool = true // animation has completed
                         //assign actions
                         self.assignActions()
-                    })
                 })
             })
         })
@@ -92,7 +82,7 @@ class MainMenu : SKScene{
         leaderboardBlock.playAction = {
             //check leaderboard
             if(self.gameScene.gameViewController.gcEnabled){
-                //if gamecenter is enabled send info 
+                //if gamecenter is enabled send info
                 self.gameScene.gameViewController.addScoreAndSubmitToGC(score: Information.info.highscore)
             }
             self.gameScene.gameViewController.checkGCLeaderboard()
@@ -106,11 +96,8 @@ class MainMenu : SKScene{
                 self.audioBlock.removeFromParent()
                 self.leaderboardBlock.run(SKAction.moveBy(x: 1500, y: 0, duration: 0.1), completion: {
                     self.leaderboardBlock.removeFromParent()
-                    self.shopBlock.run(SKAction.moveBy(x: 1500, y: 0, duration: 0.1), completion: {
-                        self.shopBlock.removeFromParent()
-                        //animations have finished
-                        completion()
-                    })
+                    //animations have finished
+                    completion()
                 })
             })
         })
