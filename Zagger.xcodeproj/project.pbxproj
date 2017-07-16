@@ -35,7 +35,6 @@
 		20C41D8E1F1B39270014F276 /* GoodChance.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 20C41D891F1B39270014F276 /* GoodChance.mp3 */; };
 		20C41D8F1F1B39270014F276 /* SnakeMove.wav in Resources */ = {isa = PBXBuildFile; fileRef = 20C41D8A1F1B39270014F276 /* SnakeMove.wav */; };
 		20C41D901F1B39270014F276 /* SnakeMoveA.wav in Resources */ = {isa = PBXBuildFile; fileRef = 20C41D8B1F1B39270014F276 /* SnakeMoveA.wav */; };
-		20C41D9C1F1B4BC40014F276 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 20C41D9B1F1B4BC40014F276 /* GoogleService-Info.plist */; };
 		20F417B41F15EEF600E8ED36 /* FormationA.sks in Resources */ = {isa = PBXBuildFile; fileRef = 20F417B31F15EEF600E8ED36 /* FormationA.sks */; };
 		20FE6C181F169678001F4440 /* FormationB.sks in Resources */ = {isa = PBXBuildFile; fileRef = 20FE6C171F169678001F4440 /* FormationB.sks */; };
 		20FE6C1A1F16A154001F4440 /* FormationC.sks in Resources */ = {isa = PBXBuildFile; fileRef = 20FE6C191F16A154001F4440 /* FormationC.sks */; };
@@ -97,7 +96,6 @@
 		20C41D891F1B39270014F276 /* GoodChance.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = GoodChance.mp3; sourceTree = "<group>"; };
 		20C41D8A1F1B39270014F276 /* SnakeMove.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = SnakeMove.wav; sourceTree = "<group>"; };
 		20C41D8B1F1B39270014F276 /* SnakeMoveA.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = SnakeMoveA.wav; sourceTree = "<group>"; };
-		20C41D9B1F1B4BC40014F276 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Desktop/IOS APP FIREBASE API KEYS/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		20F417B31F15EEF600E8ED36 /* FormationA.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FormationA.sks; sourceTree = "<group>"; };
 		20FE6C171F169678001F4440 /* FormationB.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FormationB.sks; sourceTree = "<group>"; };
 		20FE6C191F16A154001F4440 /* FormationC.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FormationC.sks; sourceTree = "<group>"; };
@@ -154,7 +152,6 @@
 		2008C9EF1F1545770026A29D /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				20C41D9B1F1B4BC40014F276 /* GoogleService-Info.plist */,
 				20C41D871F1B39270014F276 /* BadChance.wav */,
 				20C41D881F1B39270014F276 /* GameOver.wav */,
 				20C41D891F1B39270014F276 /* GoodChance.mp3 */,
@@ -417,7 +414,6 @@
 				20F417B41F15EEF600E8ED36 /* FormationA.sks in Resources */,
 				20FE6C1A1F16A154001F4440 /* FormationC.sks in Resources */,
 				204058E91F193E230031A404 /* ChanceParticleExploding.sks in Resources */,
-				20C41D9C1F1B4BC40014F276 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
