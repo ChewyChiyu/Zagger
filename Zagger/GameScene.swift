@@ -8,6 +8,7 @@
 
 import SpriteKit
 import GameplayKit
+import GoogleMobileAds
 
 enum gameState{
     case isLaunched, isStarting, isPlaying, isEnding, isRestarting
@@ -18,6 +19,9 @@ enum formations{
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
     //MARK: Class Variables
+    
+    //full screen AD
+     var interstitial: GADInterstitial!
     
     //link from controller to scene
     var gameViewController = GameViewController()
@@ -125,9 +129,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 if let restart = RestartMenu(fileNamed: "RestartMenu"){
                     restartMenu = restart
                     restartMenu?.start(scene: self)
-                }                
+                }
+                
+                if(gameViewController.gcEnabled){
+                    //if gamecenter is enabled send info
+                    gameViewController.addScoreAndSubmitToGC(score: Information.info.highscore)
+                }
+                
+                
                 break
             case .isRestarting:
+                //load add when restarting and ready
+                if interstitial.isReady {
+                    interstitial.present(fromRootViewController: gameViewController)
+                }
+                
                 //restarting game
                 gameViewController.resetScene()
                 break
@@ -147,6 +163,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         state = .isStarting
     }
     override func didMove(to view: SKView) {
+        //MARK: Handle loading in an ad if possible here
+        interstitial = GADInterstitial(adUnitID: "ca-app-pub-1967902439424087/3024719452")
+        let request = GADRequest()
+        interstitial.load(request)
+        
         //MARK: Assigning class variables
         
         //setting didSet to isLaunched

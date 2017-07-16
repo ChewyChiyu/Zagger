@@ -1,0 +1,6 @@
+framework module Pods_ZaggerUITests {
+  umbrella header "Pods-ZaggerUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

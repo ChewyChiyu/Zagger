@@ -87,10 +87,6 @@ class MainMenu : SKScene{
         //highscore block
         leaderboardBlock.playAction = {
             //check leaderboard
-            if(self.gameScene.gameViewController.gcEnabled){
-                //if gamecenter is enabled send info
-                self.gameScene.gameViewController.addScoreAndSubmitToGC(score: Information.info.highscore)
-            }
             self.gameScene.gameViewController.checkGCLeaderboard()
         }
         //color block

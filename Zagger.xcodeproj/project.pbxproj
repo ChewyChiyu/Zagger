@@ -30,14 +30,18 @@
 		20BCC6A71F1536B0006F63F7 /* ZaggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BCC6A61F1536B0006F63F7 /* ZaggerTests.swift */; };
 		20BCC6B21F1536B0006F63F7 /* ZaggerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BCC6B11F1536B0006F63F7 /* ZaggerUITests.swift */; };
 		20BCC6C31F154019006F63F7 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20BCC6C21F154019006F63F7 /* GameKit.framework */; };
-		20C41D731F1B0C5E0014F276 /* GameOver.wav in Resources */ = {isa = PBXBuildFile; fileRef = 20C41D6F1F1B0C5E0014F276 /* GameOver.wav */; };
-		20C41D751F1B0C5E0014F276 /* BadChance.wav in Resources */ = {isa = PBXBuildFile; fileRef = 20C41D711F1B0C5E0014F276 /* BadChance.wav */; };
-		20C41D761F1B0C5E0014F276 /* GoodChance.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 20C41D721F1B0C5E0014F276 /* GoodChance.mp3 */; };
-		20C41D7A1F1B14720014F276 /* SnakeMove.wav in Resources */ = {isa = PBXBuildFile; fileRef = 20C41D791F1B14720014F276 /* SnakeMove.wav */; };
-		20C41D7E1F1B157F0014F276 /* SnakeMoveA.wav in Resources */ = {isa = PBXBuildFile; fileRef = 20C41D7D1F1B157F0014F276 /* SnakeMoveA.wav */; };
+		20C41D861F1B391A0014F276 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 20C41D851F1B391A0014F276 /* GoogleService-Info.plist */; };
+		20C41D8C1F1B39270014F276 /* BadChance.wav in Resources */ = {isa = PBXBuildFile; fileRef = 20C41D871F1B39270014F276 /* BadChance.wav */; };
+		20C41D8D1F1B39270014F276 /* GameOver.wav in Resources */ = {isa = PBXBuildFile; fileRef = 20C41D881F1B39270014F276 /* GameOver.wav */; };
+		20C41D8E1F1B39270014F276 /* GoodChance.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 20C41D891F1B39270014F276 /* GoodChance.mp3 */; };
+		20C41D8F1F1B39270014F276 /* SnakeMove.wav in Resources */ = {isa = PBXBuildFile; fileRef = 20C41D8A1F1B39270014F276 /* SnakeMove.wav */; };
+		20C41D901F1B39270014F276 /* SnakeMoveA.wav in Resources */ = {isa = PBXBuildFile; fileRef = 20C41D8B1F1B39270014F276 /* SnakeMoveA.wav */; };
 		20F417B41F15EEF600E8ED36 /* FormationA.sks in Resources */ = {isa = PBXBuildFile; fileRef = 20F417B31F15EEF600E8ED36 /* FormationA.sks */; };
 		20FE6C181F169678001F4440 /* FormationB.sks in Resources */ = {isa = PBXBuildFile; fileRef = 20FE6C171F169678001F4440 /* FormationB.sks */; };
 		20FE6C1A1F16A154001F4440 /* FormationC.sks in Resources */ = {isa = PBXBuildFile; fileRef = 20FE6C191F16A154001F4440 /* FormationC.sks */; };
+		57A07B6A962E569F20523D76 /* Pods_Zagger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DA831A0FBEF8E43953E1710 /* Pods_Zagger.framework */; };
+		9009BE0AA0D9EB24640434FA /* Pods_ZaggerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 062C7A99657ABB7153A3EB4D /* Pods_ZaggerTests.framework */; };
+		BA439F0B6952B2DBD0027365 /* Pods_ZaggerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D9B57BA457C06B3A2518D32 /* Pods_ZaggerUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +62,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		062C7A99657ABB7153A3EB4D /* Pods_ZaggerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZaggerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		204058D31F16E44C0031A404 /* FormationF.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FormationF.sks; sourceTree = "<group>"; };
 		204058D81F175D940031A404 /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Button.swift; path = "../../TaptoSort/Tap to Sort/Button.swift"; sourceTree = "<group>"; };
 		204058DA1F17691D0031A404 /* Information.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Information.swift; sourceTree = "<group>"; };
@@ -87,14 +92,23 @@
 		20BCC6B11F1536B0006F63F7 /* ZaggerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZaggerUITests.swift; sourceTree = "<group>"; };
 		20BCC6B31F1536B0006F63F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20BCC6C21F154019006F63F7 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
-		20C41D6F1F1B0C5E0014F276 /* GameOver.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = GameOver.wav; path = ../../../Downloads/GameOver.wav; sourceTree = "<group>"; };
-		20C41D711F1B0C5E0014F276 /* BadChance.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = BadChance.wav; path = ../../../Downloads/BadChance.wav; sourceTree = "<group>"; };
-		20C41D721F1B0C5E0014F276 /* GoodChance.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = GoodChance.mp3; path = ../../../Downloads/GoodChance.mp3; sourceTree = "<group>"; };
-		20C41D791F1B14720014F276 /* SnakeMove.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = SnakeMove.wav; path = ../../../.Trash/SnakeMove.wav; sourceTree = "<group>"; };
-		20C41D7D1F1B157F0014F276 /* SnakeMoveA.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = SnakeMoveA.wav; path = ../../../Downloads/SnakeMoveA.wav; sourceTree = "<group>"; };
+		20C41D851F1B391A0014F276 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		20C41D871F1B39270014F276 /* BadChance.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = BadChance.wav; sourceTree = "<group>"; };
+		20C41D881F1B39270014F276 /* GameOver.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = GameOver.wav; sourceTree = "<group>"; };
+		20C41D891F1B39270014F276 /* GoodChance.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = GoodChance.mp3; sourceTree = "<group>"; };
+		20C41D8A1F1B39270014F276 /* SnakeMove.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = SnakeMove.wav; sourceTree = "<group>"; };
+		20C41D8B1F1B39270014F276 /* SnakeMoveA.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = SnakeMoveA.wav; sourceTree = "<group>"; };
 		20F417B31F15EEF600E8ED36 /* FormationA.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FormationA.sks; sourceTree = "<group>"; };
 		20FE6C171F169678001F4440 /* FormationB.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FormationB.sks; sourceTree = "<group>"; };
 		20FE6C191F16A154001F4440 /* FormationC.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FormationC.sks; sourceTree = "<group>"; };
+		2DA831A0FBEF8E43953E1710 /* Pods_Zagger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zagger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2EFCD31F3874614E6B832BB2 /* Pods-ZaggerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZaggerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZaggerTests/Pods-ZaggerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		459BD0CCB455D3F7EC9A2239 /* Pods-Zagger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zagger.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Zagger/Pods-Zagger.debug.xcconfig"; sourceTree = "<group>"; };
+		4BE2E56AEC5C5472F2E5BFB0 /* Pods-Zagger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zagger.release.xcconfig"; path = "Pods/Target Support Files/Pods-Zagger/Pods-Zagger.release.xcconfig"; sourceTree = "<group>"; };
+		5D9B57BA457C06B3A2518D32 /* Pods_ZaggerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZaggerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E029C0A09A1B7E5D39F62D6 /* Pods-ZaggerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZaggerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZaggerUITests/Pods-ZaggerUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		9108EB5C7A069A6080EF1B5C /* Pods-ZaggerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZaggerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZaggerTests/Pods-ZaggerTests.release.xcconfig"; sourceTree = "<group>"; };
+		F9E92083419A96872CD255E0 /* Pods-ZaggerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZaggerUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZaggerUITests/Pods-ZaggerUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +117,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				20BCC6C31F154019006F63F7 /* GameKit.framework in Frameworks */,
+				57A07B6A962E569F20523D76 /* Pods_Zagger.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +125,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9009BE0AA0D9EB24640434FA /* Pods_ZaggerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,6 +133,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA439F0B6952B2DBD0027365 /* Pods_ZaggerUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,11 +154,12 @@
 		2008C9EF1F1545770026A29D /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				20C41D7D1F1B157F0014F276 /* SnakeMoveA.wav */,
-				20C41D791F1B14720014F276 /* SnakeMove.wav */,
-				20C41D6F1F1B0C5E0014F276 /* GameOver.wav */,
-				20C41D711F1B0C5E0014F276 /* BadChance.wav */,
-				20C41D721F1B0C5E0014F276 /* GoodChance.mp3 */,
+				20C41D851F1B391A0014F276 /* GoogleService-Info.plist */,
+				20C41D871F1B39270014F276 /* BadChance.wav */,
+				20C41D881F1B39270014F276 /* GameOver.wav */,
+				20C41D891F1B39270014F276 /* GoodChance.mp3 */,
+				20C41D8A1F1B39270014F276 /* SnakeMove.wav */,
+				20C41D8B1F1B39270014F276 /* SnakeMoveA.wav */,
 				204058D81F175D940031A404 /* Button.swift */,
 				204058DA1F17691D0031A404 /* Information.swift */,
 				20BCC6981F1536B0006F63F7 /* Assets.xcassets */,
@@ -188,6 +206,7 @@
 				20BCC6B01F1536B0006F63F7 /* ZaggerUITests */,
 				20BCC6891F1536B0006F63F7 /* Products */,
 				20BCC6BF1F1536BC006F63F7 /* Frameworks */,
+				CC1FCD506E7F038C60E0261D /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -234,8 +253,24 @@
 			isa = PBXGroup;
 			children = (
 				20BCC6C21F154019006F63F7 /* GameKit.framework */,
+				2DA831A0FBEF8E43953E1710 /* Pods_Zagger.framework */,
+				062C7A99657ABB7153A3EB4D /* Pods_ZaggerTests.framework */,
+				5D9B57BA457C06B3A2518D32 /* Pods_ZaggerUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CC1FCD506E7F038C60E0261D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				459BD0CCB455D3F7EC9A2239 /* Pods-Zagger.debug.xcconfig */,
+				4BE2E56AEC5C5472F2E5BFB0 /* Pods-Zagger.release.xcconfig */,
+				2EFCD31F3874614E6B832BB2 /* Pods-ZaggerTests.debug.xcconfig */,
+				9108EB5C7A069A6080EF1B5C /* Pods-ZaggerTests.release.xcconfig */,
+				5E029C0A09A1B7E5D39F62D6 /* Pods-ZaggerUITests.debug.xcconfig */,
+				F9E92083419A96872CD255E0 /* Pods-ZaggerUITests.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,9 +280,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 20BCC6B61F1536B0006F63F7 /* Build configuration list for PBXNativeTarget "Zagger" */;
 			buildPhases = (
+				46DE062AAF7A597CE71715FA /* [CP] Check Pods Manifest.lock */,
 				20BCC6841F1536B0006F63F7 /* Sources */,
 				20BCC6851F1536B0006F63F7 /* Frameworks */,
 				20BCC6861F1536B0006F63F7 /* Resources */,
+				8456DC3F26DB455553BC6831 /* [CP] Embed Pods Frameworks */,
+				C6F5983AA6DCEF2E1D2D12F2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -262,9 +300,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 20BCC6B91F1536B0006F63F7 /* Build configuration list for PBXNativeTarget "ZaggerTests" */;
 			buildPhases = (
+				1CCD3BB1DD5601F2179EF398 /* [CP] Check Pods Manifest.lock */,
 				20BCC69E1F1536B0006F63F7 /* Sources */,
 				20BCC69F1F1536B0006F63F7 /* Frameworks */,
 				20BCC6A01F1536B0006F63F7 /* Resources */,
+				2DAD1F2E04281C59F9A71188 /* [CP] Embed Pods Frameworks */,
+				8E9659D442CBD3010BD05E64 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -280,9 +321,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 20BCC6BC1F1536B0006F63F7 /* Build configuration list for PBXNativeTarget "ZaggerUITests" */;
 			buildPhases = (
+				343EA31B45BD089AD632DC41 /* [CP] Check Pods Manifest.lock */,
 				20BCC6A91F1536B0006F63F7 /* Sources */,
 				20BCC6AA1F1536B0006F63F7 /* Frameworks */,
 				20BCC6AB1F1536B0006F63F7 /* Resources */,
+				18B90D23DCDCEF04242FA880 /* [CP] Embed Pods Frameworks */,
+				FEAF819AEF90284C4DEFE0B1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -353,25 +397,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20C41D751F1B0C5E0014F276 /* BadChance.wav in Resources */,
 				20BCC6971F1536B0006F63F7 /* Main.storyboard in Resources */,
 				204058DF1F1898A20031A404 /* MainMenu.sks in Resources */,
+				20C41D8D1F1B39270014F276 /* GameOver.wav in Resources */,
 				20684F6F1F16CF1C008144C4 /* FormationE.sks in Resources */,
 				204058E71F1934940031A404 /* ChanceParticle.sks in Resources */,
 				20BCC68E1F1536B0006F63F7 /* GameScene.sks in Resources */,
+				20C41D8F1F1B39270014F276 /* SnakeMove.wav in Resources */,
 				20BCC6991F1536B0006F63F7 /* Assets.xcassets in Resources */,
 				20BCC69C1F1536B0006F63F7 /* LaunchScreen.storyboard in Resources */,
-				20C41D7A1F1B14720014F276 /* SnakeMove.wav in Resources */,
 				204058D41F16E44C0031A404 /* FormationF.sks in Resources */,
 				20FE6C181F169678001F4440 /* FormationB.sks in Resources */,
+				20C41D8C1F1B39270014F276 /* BadChance.wav in Resources */,
+				20C41D861F1B391A0014F276 /* GoogleService-Info.plist in Resources */,
+				20C41D901F1B39270014F276 /* SnakeMoveA.wav in Resources */,
 				20684F6D1F16C819008144C4 /* FormationD.sks in Resources */,
-				20C41D7E1F1B157F0014F276 /* SnakeMoveA.wav in Resources */,
 				204058E11F18A4DF0031A404 /* RestartMenu.sks in Resources */,
+				20C41D8E1F1B39270014F276 /* GoodChance.mp3 in Resources */,
 				20BCC6901F1536B0006F63F7 /* Actions.sks in Resources */,
-				20C41D761F1B0C5E0014F276 /* GoodChance.mp3 in Resources */,
 				20F417B41F15EEF600E8ED36 /* FormationA.sks in Resources */,
 				20FE6C1A1F16A154001F4440 /* FormationC.sks in Resources */,
-				20C41D731F1B0C5E0014F276 /* GameOver.wav in Resources */,
 				204058E91F193E230031A404 /* ChanceParticleExploding.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -391,6 +436,144 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		18B90D23DCDCEF04242FA880 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZaggerUITests/Pods-ZaggerUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1CCD3BB1DD5601F2179EF398 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		2DAD1F2E04281C59F9A71188 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZaggerTests/Pods-ZaggerTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		343EA31B45BD089AD632DC41 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		46DE062AAF7A597CE71715FA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8456DC3F26DB455553BC6831 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Zagger/Pods-Zagger-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8E9659D442CBD3010BD05E64 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZaggerTests/Pods-ZaggerTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C6F5983AA6DCEF2E1D2D12F2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Zagger/Pods-Zagger-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FEAF819AEF90284C4DEFE0B1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZaggerUITests/Pods-ZaggerUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		20BCC6841F1536B0006F63F7 /* Sources */ = {
@@ -556,6 +739,7 @@
 		};
 		20BCC6B71F1536B0006F63F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 459BD0CCB455D3F7EC9A2239 /* Pods-Zagger.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 6H36FS38Y3;
@@ -571,6 +755,7 @@
 		};
 		20BCC6B81F1536B0006F63F7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4BE2E56AEC5C5472F2E5BFB0 /* Pods-Zagger.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 6H36FS38Y3;
@@ -586,6 +771,7 @@
 		};
 		20BCC6BA1F1536B0006F63F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2EFCD31F3874614E6B832BB2 /* Pods-ZaggerTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -601,6 +787,7 @@
 		};
 		20BCC6BB1F1536B0006F63F7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9108EB5C7A069A6080EF1B5C /* Pods-ZaggerTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -616,6 +803,7 @@
 		};
 		20BCC6BD1F1536B0006F63F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E029C0A09A1B7E5D39F62D6 /* Pods-ZaggerUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 6H36FS38Y3;
@@ -630,6 +818,7 @@
 		};
 		20BCC6BE1F1536B0006F63F7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F9E92083419A96872CD255E0 /* Pods-ZaggerUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 6H36FS38Y3;
