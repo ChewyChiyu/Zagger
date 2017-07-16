@@ -15,6 +15,7 @@ class ChanceParticle: SKSpriteNode{
     
     var alreadyContacted: Bool = false
     var goodChance : Bool = true
+    var particle: SKEmitterNode!
     var gameScene : GameScene!
     init(gameScene: GameScene){
         //based off circle texture for core
@@ -35,6 +36,15 @@ class ChanceParticle: SKSpriteNode{
         super.physicsBody?.contactTestBitMask = UINT32_MAX
         super.physicsBody?.collisionBitMask = 0 // no collisions
         
+        if(Information.info.mainColorWhite){
+            self.color = UIColor.white
+        }else{
+            self.color = UIColor.black
+        }
+        
+        self.colorBlendFactor = 1
+        
+        
         //setting position based on scene gamePlay
         let positionX = (arc4random_uniform(2)==1) ? -Int(arc4random_uniform(UInt32(gameScene.view!.bounds.width/2))) : Int(arc4random_uniform(UInt32(gameScene.view!.bounds.width/2)))
         //9500 is the formation constant
@@ -45,15 +55,15 @@ class ChanceParticle: SKSpriteNode{
         self.position = CGPoint(x:positionX,y:positionY)
         
         //attaching particle
-        let particle = SKEmitterNode(fileNamed: "ChanceParticle.sks")
+        particle = SKEmitterNode(fileNamed: "ChanceParticle.sks")
         self.addChild(particle!)
         
         //setting particle color
         
         if(Information.info.mainColorWhite){
-            particle?.particleColor = UIColor.black
-        }else{
             particle?.particleColor = UIColor.white
+        }else{
+            particle?.particleColor = UIColor.black
         }
         
         //so cant ignore color change
@@ -80,7 +90,8 @@ class ChanceParticle: SKSpriteNode{
     }
     
     func explode(){
-        self.removeAllChildren() // removing orgional particle node
+        particle.removeFromParent() // removing orgional particle node
+        self.color = UIColor.clear
         
         self.texture = nil // nil texture , bold square no longer needed
         
