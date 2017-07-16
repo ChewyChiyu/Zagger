@@ -97,7 +97,6 @@ class ChanceParticle: SKSpriteNode{
         
         let particleAfterEffect = SKEmitterNode(fileNamed: "ChanceParticleExploding.sks")
         
-        
         //setting particle target
         particleAfterEffect?.targetNode = gameScene
         

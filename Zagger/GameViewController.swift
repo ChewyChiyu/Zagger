@@ -48,9 +48,6 @@ class GameViewController: UIViewController, GKGameCenterControllerDelegate {
             }
             
             view.ignoresSiblingOrder = true
-            
-            view.showsFPS = true
-            view.showsNodeCount = true
         }
         
         //MARK: Setting up game Center
