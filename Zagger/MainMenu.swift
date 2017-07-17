@@ -95,17 +95,22 @@ class MainMenu : SKScene{
         }
         //color block
         colorBlock.playAction = {
+            //only unlock if highscore is over 100
+            if(Information.info.highscore >= 100){
             Information.info.mainColorWhite = !Information.info.mainColorWhite
             
             //inverting colors with a scene reset
             self.gameScene.gameViewController.resetScene()
-            
+            }else{
+                let myAlert: UIAlertController = UIAlertController(title: "Yea.. about that!", message: "Reach a highscore of 100 or over to Unlock !", preferredStyle: .alert)
+                myAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.gameScene.gameViewController.present(myAlert, animated: true, completion: nil)
+            }
         }
         
         //disable ads prompt
         disableAds.playAction = {
-           //disable ads option is only avaiable if highscore is over 250
-            print(Information.info.disabledAdvertisements)
+           //disable ads option is only avaiable if highscore is over 200
             if(Information.info.highscore >= 200){
                 
                 let disableBar = self.disableAds.childNode(withName: "DisableBar") as? SKSpriteNode
