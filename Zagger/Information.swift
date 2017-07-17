@@ -9,7 +9,7 @@
 import Foundation
 import SpriteKit
 struct Information{
-    
+
     //MARK: Purpose of this struct is to save information
     static var info = Information() // static
     
@@ -17,7 +17,7 @@ struct Information{
     //In Game Sound actions
     let moveSound = SKAction.playSoundFileNamed("SnakeMove.wav", waitForCompletion: false)
     
-     let moveSoundA = SKAction.playSoundFileNamed("SnakeMoveA.wav", waitForCompletion: false)
+    let moveSoundA = SKAction.playSoundFileNamed("SnakeMoveA.wav", waitForCompletion: false)
     
     let gameOverSound = SKAction.playSoundFileNamed("GameOver.wav", waitForCompletion: false)
     
@@ -46,6 +46,14 @@ struct Information{
             UserDefaults.standard.set(mainColorWhite, forKey: "mainColorWhite")
         }
     }
+    
+    var disabledAdvertisements: Bool = false{
+        didSet{
+            //saving this info
+            UserDefaults.standard.set(disabledAdvertisements, forKey: "disabledAds")
+        }
+    }
+    
     mutating func loadInfo(){
         
         //loading in if audio is on
@@ -63,13 +71,16 @@ struct Information{
         if let color = UserDefaults.standard.value(forKey: "mainColorWhite"){
             mainColorWhite = color as! Bool
         }
-
         
+        //load in app purchase
+        if let disabled = UserDefaults.standard.value(forKey: "disabledAds"){
+            disabledAdvertisements = disabled as! Bool
+        }
     }
     //MARK : In Game Audio play funcs
     func playSnakeSound(scene: GameScene){
         if(soundOn){
-        scene.run(moveSound)
+            scene.run(moveSound)
         }
     }
     

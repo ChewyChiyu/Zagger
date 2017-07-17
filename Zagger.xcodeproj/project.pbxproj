@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20305F471F1C832D0085DE34 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20305F461F1C832D0085DE34 /* StoreKit.framework */; };
 		204058D41F16E44C0031A404 /* FormationF.sks in Resources */ = {isa = PBXBuildFile; fileRef = 204058D31F16E44C0031A404 /* FormationF.sks */; };
 		204058D91F175D940031A404 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204058D81F175D940031A404 /* Button.swift */; };
 		204058DB1F17691D0031A404 /* Information.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204058DA1F17691D0031A404 /* Information.swift */; };
@@ -63,6 +64,7 @@
 
 /* Begin PBXFileReference section */
 		062C7A99657ABB7153A3EB4D /* Pods_ZaggerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZaggerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		20305F461F1C832D0085DE34 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		204058D31F16E44C0031A404 /* FormationF.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FormationF.sks; sourceTree = "<group>"; };
 		204058D81F175D940031A404 /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Button.swift; path = "../../TaptoSort/Tap to Sort/Button.swift"; sourceTree = "<group>"; };
 		204058DA1F17691D0031A404 /* Information.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Information.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20305F471F1C832D0085DE34 /* StoreKit.framework in Frameworks */,
 				20BCC6C31F154019006F63F7 /* GameKit.framework in Frameworks */,
 				57A07B6A962E569F20523D76 /* Pods_Zagger.framework in Frameworks */,
 			);
@@ -252,6 +255,7 @@
 		20BCC6BF1F1536BC006F63F7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				20305F461F1C832D0085DE34 /* StoreKit.framework */,
 				20BCC6C21F154019006F63F7 /* GameKit.framework */,
 				2DA831A0FBEF8E43953E1710 /* Pods_Zagger.framework */,
 				062C7A99657ABB7153A3EB4D /* Pods_ZaggerTests.framework */,
@@ -354,6 +358,9 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.GameCenter = {
+								enabled = 1;
+							};
+							com.apple.InAppPurchase = {
 								enabled = 1;
 							};
 						};

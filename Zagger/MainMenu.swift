@@ -19,6 +19,8 @@ class MainMenu : SKScene{
     var highscoreLabel: SKLabelNode!
     var animationBool : Bool = false
     
+    var disableAds: Button!
+    
     //MARK: This class handles the animation and actions of the mainMenu
     var gameScene: GameScene!
     func start(scene: GameScene){
@@ -40,7 +42,8 @@ class MainMenu : SKScene{
         colorBlock = self.childNode(withName: "ColorBlock") as? Button
         highscoreLabel = titleBlock.childNode(withName: "Highscore") as? SKLabelNode
         highscoreLabel.text = "Best: \(Information.info.highscore)"
-    }
+        disableAds = titleBlock.childNode(withName: "DisableAds") as? Button
+     }
     
     func animateOnScene(){
         //remove from current scene
@@ -61,6 +64,7 @@ class MainMenu : SKScene{
         //load audio information from save
         audioBlock.childNode(withName: "AudioOn")?.alpha = (Information.info.soundOn) ? 1 : 0
         
+        disableAds.childNode(withName: "DisableBar")?.alpha = (Information.info.disabledAdvertisements) ? 1 : 0
         
         //move sprites with time delay for animation effect in order from top to bottom
         titleBlock.run(SKAction.moveBy(x: 1500, y: 0, duration: 0.15), completion: {
@@ -96,6 +100,26 @@ class MainMenu : SKScene{
             //inverting colors with a scene reset
             self.gameScene.gameViewController.resetScene()
             
+        }
+        
+        //disable ads prompt
+        disableAds.playAction = {
+           //disable ads option is only avaiable if highscore is over 250
+            print(Information.info.disabledAdvertisements)
+            if(Information.info.highscore >= 200){
+                
+                let disableBar = self.disableAds.childNode(withName: "DisableBar") as? SKSpriteNode
+                
+                disableBar?.alpha = (disableBar?.alpha==1) ? 0 : 1
+                
+                Information.info.disabledAdvertisements = (disableBar?.alpha==1) ? true : false
+                
+            }else{
+            //nope cannot remove ads
+            let myAlert: UIAlertController = UIAlertController(title: "Yea.. about that!", message: "Reach a highscore of 200 or over to remove ads!", preferredStyle: .alert)
+            myAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.gameScene.gameViewController.present(myAlert, animated: true, completion: nil)
+            }
         }
     }
     

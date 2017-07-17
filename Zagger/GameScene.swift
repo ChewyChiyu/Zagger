@@ -8,6 +8,7 @@
 
 import SpriteKit
 import GameplayKit
+
 import GoogleMobileAds
 
 enum gameState{
@@ -21,7 +22,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     //MARK: Class Variables
     
     //full screen AD
-     var interstitial: GADInterstitial!
+    var interstitial: GADInterstitial!
     
     //link from controller to scene
     var gameViewController = GameViewController()
@@ -140,7 +141,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 break
             case .isRestarting:
                 //load add when restarting and ready
-                if interstitial.isReady {
+                if interstitial.isReady && !Information.info.disabledAdvertisements  {
                     interstitial.present(fromRootViewController: gameViewController)
                 }
                 
@@ -164,7 +165,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     override func didMove(to view: SKView) {
         //MARK: Handle loading in an ad if possible here
-        interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/1033173712")
+        interstitial = GADInterstitial(adUnitID: "ca-app-pub-1967902439424087/3024719452")
         
         //Test Ad ID: ca-app-pub-3940256099942544/1033173712
         //Live Ad ID: ca-app-pub-1967902439424087/3024719452
@@ -443,5 +444,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         layer.run(actionSeq);
     }
     
-
+    
+    
+    
 }
