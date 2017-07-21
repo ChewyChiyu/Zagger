@@ -143,6 +143,7 @@ class MainMenu : SKScene{
                         self?.colorBlock?.removeFromParent()
                         //animations have finished
                         completion()
+                        
                     })
                 })
             })

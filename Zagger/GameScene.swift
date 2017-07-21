@@ -20,8 +20,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     //MARK: Class Variables
     
-    //full screen AD
-    var interstitial: GADInterstitial!
+   
     
     //link from controller to scene
     weak var gameViewController = GameViewController()
@@ -130,7 +129,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     restartMenu = restart
                     restartMenu?.start(scene: self)
                 }
-                gameViewController?.resetScene()
                 if(gameViewController?.gcEnabled)!{
                     //if gamecenter is enabled send info
                     gameViewController?.addScoreAndSubmitToGC(score: Information.info.highscore)
@@ -140,9 +138,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 break
             case .isRestarting:
                 //load add when restarting and ready
-//                if interstitial.isReady && !Information.info.disabledAdvertisements  {
-//                    interstitial.present(fromRootViewController: gameViewController!)
-//                }
+                if(gameViewController?.interstitial?.isReady)! && !Information.info.disabledAdvertisements  {
+                    gameViewController?.interstitial?.present(fromRootViewController: gameViewController!)
+                }
                 
                 //restarting game
                 gameViewController?.resetScene()
@@ -163,16 +161,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         state = .isStarting
     }
     override func didMove(to view: SKView) {
-        //MARK: Handle loading in an ad if possible here
-        interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/1033173712")
-        
-        //Test Ad ID: ca-app-pub-3940256099942544/1033173712
-        //Live Ad ID: ca-app-pub-1967902439424087/3024719452
+                
         
         
-//        
-//        let request = GADRequest()
-//        interstitial.load(request)
+        let request = GADRequest()
+        gameViewController?.interstitial?.load(request)
         
         //MARK: Assigning class variables
         

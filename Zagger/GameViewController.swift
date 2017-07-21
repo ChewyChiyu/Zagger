@@ -11,6 +11,7 @@ import GameKit
 import UIKit
 import SpriteKit
 import GameplayKit
+import GoogleMobileAds
 
 
 class GameViewController: UIViewController, GKGameCenterControllerDelegate {
@@ -21,6 +22,8 @@ class GameViewController: UIViewController, GKGameCenterControllerDelegate {
     var gcEnabled = Bool() // Check if the user has Game Center enabled
     var gcDefaultLeaderBoard = String() // Check the default leaderboardID
     
+    //full screen AD
+    var interstitial: GADInterstitial?
     
     var gameView: SKView!
     var gameScene: SKScene!
@@ -35,6 +38,12 @@ class GameViewController: UIViewController, GKGameCenterControllerDelegate {
         //MARK: Loading in game information from saves
         Information.info.loadInfo()
         
+        //MARK: Handle loading in an ad if possible here
+        interstitial = GADInterstitial(adUnitID: "ca-app-pub-1967902439424087/3024719452")
+        
+        //Test Ad ID: ca-app-pub-3940256099942544/1033173712
+        //Live Ad ID: ca-app-pub-1967902439424087/3024719452
+
         
         
         if let view = self.view as! SKView? {
@@ -62,6 +71,11 @@ class GameViewController: UIViewController, GKGameCenterControllerDelegate {
 
     func resetScene(){
         
+        
+        //MARK: Handle loading in an ad if possible here
+        if((interstitial?.hasBeenUsed)!){
+        interstitial = GADInterstitial(adUnitID: "ca-app-pub-1967902439424087/3024719452")
+        }
         
         //clearing scene
         

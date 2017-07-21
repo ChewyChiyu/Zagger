@@ -62,7 +62,7 @@ class RestartMenu : SKScene{
             guard let strongSelf = self else { return }
             //animate off scene
             strongSelf.scoreBlock.run(SKAction.moveBy(x: 1500, y: 0, duration: 0.1), completion: {
-                strongSelf.restartBlock.run(SKAction.moveBy(x: 1500, y: 0, duration: 0.1), completion: {
+                strongSelf.restartBlock.run(SKAction.moveBy(x: 1500, y: 0, duration: 0.1), completion: {  
                     //animation off has finished
                     //setting gameScene state to isRestarting
                     strongSelf.gameScene.stateChangeToRestart()
