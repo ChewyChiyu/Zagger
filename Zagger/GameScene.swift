@@ -24,7 +24,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var interstitial: GADInterstitial!
     
     //link from controller to scene
-    var gameViewController = GameViewController()
+    weak var gameViewController = GameViewController()
     
     //current formation
     var currentFormation : SKNode!
@@ -125,27 +125,27 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 shakeCamera(layer: currentFormation, duration: 0.2, ampX: 60, ampY: 30)
                 shakeCamera(layer: nextFormation, duration: 0.2, ampX: 60, ampY: 30)
                 
-                //boot up restart menu
+//                //boot up restart menu
                 if let restart = RestartMenu(fileNamed: "RestartMenu"){
                     restartMenu = restart
                     restartMenu?.start(scene: self)
                 }
-                
-                if(gameViewController.gcEnabled){
+                gameViewController?.resetScene()
+                if(gameViewController?.gcEnabled)!{
                     //if gamecenter is enabled send info
-                    gameViewController.addScoreAndSubmitToGC(score: Information.info.highscore)
+                    gameViewController?.addScoreAndSubmitToGC(score: Information.info.highscore)
                 }
                 
                 
                 break
             case .isRestarting:
                 //load add when restarting and ready
-                if interstitial.isReady && !Information.info.disabledAdvertisements  {
-                    interstitial.present(fromRootViewController: gameViewController)
-                }
+//                if interstitial.isReady && !Information.info.disabledAdvertisements  {
+//                    interstitial.present(fromRootViewController: gameViewController!)
+//                }
                 
                 //restarting game
-                gameViewController.resetScene()
+                gameViewController?.resetScene()
                 break
             }
         }
@@ -164,15 +164,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     override func didMove(to view: SKView) {
         //MARK: Handle loading in an ad if possible here
-        interstitial = GADInterstitial(adUnitID: "ca-app-pub-1967902439424087/3024719452")
+        interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/1033173712")
         
         //Test Ad ID: ca-app-pub-3940256099942544/1033173712
         //Live Ad ID: ca-app-pub-1967902439424087/3024719452
         
         
-        
-        let request = GADRequest()
-        interstitial.load(request)
+//        
+//        let request = GADRequest()
+//        interstitial.load(request)
         
         //MARK: Assigning class variables
         
@@ -348,8 +348,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     //MARK: User input
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if(state == .isLaunched && (mainMenu?.animationBool)!){
-            mainMenu?.animateOffScene {
-                self.stateChangeToStarting()
+            mainMenu?.animateOffScene { [weak self] in
+                self?.stateChangeToStarting()
             }
         }
         
@@ -370,7 +370,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func snakeParticle() -> SKEmitterNode{
         let snakeRightParticle = SKEmitterNode()
         snakeRightParticle.targetNode = self
-        snakeRightParticle.particleTexture = SKTexture(imageNamed: "Triangle")
+        let image = UIImage(named: "Triangle")
+        snakeRightParticle.particleTexture = SKTexture(image: image!)
         
         if(Information.info.mainColorWhite){
             snakeRightParticle.particleColor = UIColor.white

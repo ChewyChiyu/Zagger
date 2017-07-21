@@ -21,6 +21,10 @@ class GameViewController: UIViewController, GKGameCenterControllerDelegate {
     var gcEnabled = Bool() // Check if the user has Game Center enabled
     var gcDefaultLeaderBoard = String() // Check the default leaderboardID
     
+    
+    var gameView: SKView!
+    var gameScene: SKScene!
+    
     // IMPORTANT: replace the red string below with your own Leaderboard ID (the one you've set in iTunes Connect)
     let LEADERBOARD_ID = "com.score.Zagger"
     
@@ -34,10 +38,11 @@ class GameViewController: UIViewController, GKGameCenterControllerDelegate {
         
         
         if let view = self.view as! SKView? {
+            gameView = view
             // Load the SKScene from 'GameScene.sks'
             if let scene = GameScene(fileNamed: "GameScene"){
                 // Set the scale mode to scale to fit the window
-                                
+                gameScene = scene
                 scene.scaleMode = .aspectFill
                 
                 //assigning controller to self
@@ -56,9 +61,22 @@ class GameViewController: UIViewController, GKGameCenterControllerDelegate {
     }
 
     func resetScene(){
+        
+        
+        //clearing scene
+        
+        gameScene.removeAllActions()
+        gameScene.removeAllChildren()
+        gameScene.removeFromParent()
+        gameScene = nil
+        gameView = nil
+        
+
+        
         if let scene = GameScene(fileNamed:"GameScene") {
             let view = self.view! as! SKView
-            
+            gameView = view
+            gameScene = scene
             view.ignoresSiblingOrder = true
             
             scene.scaleMode = .aspectFill

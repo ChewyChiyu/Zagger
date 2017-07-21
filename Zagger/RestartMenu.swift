@@ -14,7 +14,7 @@ class RestartMenu : SKScene{
     var scoreBlock : SKSpriteNode!
     var restartBlock: Button!
     
-    var gameScene: GameScene!
+    weak var gameScene: GameScene!
     
     func start(scene: GameScene){
         //starting reset menu
@@ -50,23 +50,24 @@ class RestartMenu : SKScene{
         restartBlock.position.x += 1500
         
         //move sprites in top to bottom order
-        scoreBlock.run(SKAction.moveBy(x: -1500, y: 0, duration: 0.2), completion: {
-            self.restartBlock.run(SKAction.moveBy(x: -1500, y: 0, duration: 0.2), completion: {
+        scoreBlock.run(SKAction.moveBy(x: -1500, y: 0, duration: 0.2), completion: { [weak self] in
+            self?.restartBlock.run(SKAction.moveBy(x: -1500, y: 0, duration: 0.2), completion: { [weak self] in
                 //animation on has finished
-                self.assignActions()
+                self?.assignActions()
             })
         })
     }
     func assignActions(){
-        restartBlock.playAction = {
+        restartBlock.playAction = { [weak self] in
+            guard let strongSelf = self else { return }
             //animate off scene
-            self.scoreBlock.run(SKAction.moveBy(x: 1500, y: 0, duration: 0.1), completion: {
-                self.restartBlock.run(SKAction.moveBy(x: 1500, y: 0, duration: 0.1), completion: {
+            strongSelf.scoreBlock.run(SKAction.moveBy(x: 1500, y: 0, duration: 0.1), completion: {
+                strongSelf.restartBlock.run(SKAction.moveBy(x: 1500, y: 0, duration: 0.1), completion: {
                     //animation off has finished
                     //setting gameScene state to isRestarting
-                    self.gameScene.stateChangeToRestart()
+                    strongSelf.gameScene.stateChangeToRestart()
                 })
             })
-        }
+          }
     }
 }

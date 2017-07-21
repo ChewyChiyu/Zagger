@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		20305F471F1C832D0085DE34 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20305F461F1C832D0085DE34 /* StoreKit.framework */; };
 		204058D41F16E44C0031A404 /* FormationF.sks in Resources */ = {isa = PBXBuildFile; fileRef = 204058D31F16E44C0031A404 /* FormationF.sks */; };
 		204058D91F175D940031A404 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204058D81F175D940031A404 /* Button.swift */; };
 		204058DB1F17691D0031A404 /* Information.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204058DA1F17691D0031A404 /* Information.swift */; };
@@ -20,6 +19,7 @@
 		204058E91F193E230031A404 /* ChanceParticleExploding.sks in Resources */ = {isa = PBXBuildFile; fileRef = 204058E81F193E230031A404 /* ChanceParticleExploding.sks */; };
 		20684F6D1F16C819008144C4 /* FormationD.sks in Resources */ = {isa = PBXBuildFile; fileRef = 20684F6C1F16C819008144C4 /* FormationD.sks */; };
 		20684F6F1F16CF1C008144C4 /* FormationE.sks in Resources */ = {isa = PBXBuildFile; fileRef = 20684F6E1F16CF1C008144C4 /* FormationE.sks */; };
+		2093F5811F21722C004ADADE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2093F5801F21722C004ADADE /* GoogleService-Info.plist */; };
 		20BCC68C1F1536B0006F63F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BCC68B1F1536B0006F63F7 /* AppDelegate.swift */; };
 		20BCC68E1F1536B0006F63F7 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 20BCC68D1F1536B0006F63F7 /* GameScene.sks */; };
 		20BCC6901F1536B0006F63F7 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 20BCC68F1F1536B0006F63F7 /* Actions.sks */; };
@@ -36,7 +36,6 @@
 		20C41D8E1F1B39270014F276 /* GoodChance.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 20C41D891F1B39270014F276 /* GoodChance.mp3 */; };
 		20C41D8F1F1B39270014F276 /* SnakeMove.wav in Resources */ = {isa = PBXBuildFile; fileRef = 20C41D8A1F1B39270014F276 /* SnakeMove.wav */; };
 		20C41D901F1B39270014F276 /* SnakeMoveA.wav in Resources */ = {isa = PBXBuildFile; fileRef = 20C41D8B1F1B39270014F276 /* SnakeMoveA.wav */; };
-		20C41D9E1F1B4E050014F276 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 20C41D9D1F1B4E050014F276 /* GoogleService-Info.plist */; };
 		20F417B41F15EEF600E8ED36 /* FormationA.sks in Resources */ = {isa = PBXBuildFile; fileRef = 20F417B31F15EEF600E8ED36 /* FormationA.sks */; };
 		20FE6C181F169678001F4440 /* FormationB.sks in Resources */ = {isa = PBXBuildFile; fileRef = 20FE6C171F169678001F4440 /* FormationB.sks */; };
 		20FE6C1A1F16A154001F4440 /* FormationC.sks in Resources */ = {isa = PBXBuildFile; fileRef = 20FE6C191F16A154001F4440 /* FormationC.sks */; };
@@ -64,7 +63,6 @@
 
 /* Begin PBXFileReference section */
 		062C7A99657ABB7153A3EB4D /* Pods_ZaggerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZaggerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		20305F461F1C832D0085DE34 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		204058D31F16E44C0031A404 /* FormationF.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FormationF.sks; sourceTree = "<group>"; };
 		204058D81F175D940031A404 /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Button.swift; path = "../../TaptoSort/Tap to Sort/Button.swift"; sourceTree = "<group>"; };
 		204058DA1F17691D0031A404 /* Information.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Information.swift; sourceTree = "<group>"; };
@@ -77,6 +75,7 @@
 		204058E81F193E230031A404 /* ChanceParticleExploding.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ChanceParticleExploding.sks; sourceTree = "<group>"; };
 		20684F6C1F16C819008144C4 /* FormationD.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FormationD.sks; sourceTree = "<group>"; };
 		20684F6E1F16CF1C008144C4 /* FormationE.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FormationE.sks; sourceTree = "<group>"; };
+		2093F5801F21722C004ADADE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Desktop/IOS APP FIREBASE API KEYS/Zagger/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		20BCC6881F1536B0006F63F7 /* Zagger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zagger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20BCC68B1F1536B0006F63F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20BCC68D1F1536B0006F63F7 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -99,7 +98,6 @@
 		20C41D891F1B39270014F276 /* GoodChance.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = GoodChance.mp3; sourceTree = "<group>"; };
 		20C41D8A1F1B39270014F276 /* SnakeMove.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = SnakeMove.wav; sourceTree = "<group>"; };
 		20C41D8B1F1B39270014F276 /* SnakeMoveA.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = SnakeMoveA.wav; sourceTree = "<group>"; };
-		20C41D9D1F1B4E050014F276 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Desktop/IOS APP FIREBASE API KEYS/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		20F417B31F15EEF600E8ED36 /* FormationA.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FormationA.sks; sourceTree = "<group>"; };
 		20FE6C171F169678001F4440 /* FormationB.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FormationB.sks; sourceTree = "<group>"; };
 		20FE6C191F16A154001F4440 /* FormationC.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FormationC.sks; sourceTree = "<group>"; };
@@ -118,7 +116,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20305F471F1C832D0085DE34 /* StoreKit.framework in Frameworks */,
 				20BCC6C31F154019006F63F7 /* GameKit.framework in Frameworks */,
 				57A07B6A962E569F20523D76 /* Pods_Zagger.framework in Frameworks */,
 			);
@@ -157,7 +154,7 @@
 		2008C9EF1F1545770026A29D /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				20C41D9D1F1B4E050014F276 /* GoogleService-Info.plist */,
+				2093F5801F21722C004ADADE /* GoogleService-Info.plist */,
 				20C41D871F1B39270014F276 /* BadChance.wav */,
 				20C41D881F1B39270014F276 /* GameOver.wav */,
 				20C41D891F1B39270014F276 /* GoodChance.mp3 */,
@@ -255,7 +252,6 @@
 		20BCC6BF1F1536BC006F63F7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				20305F461F1C832D0085DE34 /* StoreKit.framework */,
 				20BCC6C21F154019006F63F7 /* GameKit.framework */,
 				2DA831A0FBEF8E43953E1710 /* Pods_Zagger.framework */,
 				062C7A99657ABB7153A3EB4D /* Pods_ZaggerTests.framework */,
@@ -361,7 +357,7 @@
 								enabled = 1;
 							};
 							com.apple.InAppPurchase = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -424,7 +420,7 @@
 				20F417B41F15EEF600E8ED36 /* FormationA.sks in Resources */,
 				20FE6C1A1F16A154001F4440 /* FormationC.sks in Resources */,
 				204058E91F193E230031A404 /* ChanceParticleExploding.sks in Resources */,
-				20C41D9E1F1B4E050014F276 /* GoogleService-Info.plist in Resources */,
+				2093F5811F21722C004ADADE /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
