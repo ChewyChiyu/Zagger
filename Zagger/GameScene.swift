@@ -20,7 +20,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     //MARK: Class Variables
     
-   
+    
     
     //link from controller to scene
     weak var gameViewController = GameViewController()
@@ -124,7 +124,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 shakeCamera(layer: currentFormation, duration: 0.2, ampX: 60, ampY: 30)
                 shakeCamera(layer: nextFormation, duration: 0.2, ampX: 60, ampY: 30)
                 
-//                //boot up restart menu
+                //boot up restart menu
                 if let restart = RestartMenu(fileNamed: "RestartMenu"){
                     restartMenu = restart
                     restartMenu?.start(scene: self)
@@ -134,16 +134,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     gameViewController?.addScoreAndSubmitToGC(score: Information.info.highscore)
                 }
                 
-                
                 break
             case .isRestarting:
-                //load add when restarting and ready
-                if(gameViewController?.interstitial?.isReady)! && !Information.info.disabledAdvertisements  {
-                    gameViewController?.interstitial?.present(fromRootViewController: gameViewController!)
-                }
-                
                 //restarting game
-                gameViewController?.resetScene()
+                gameViewController?.resetScene(scene: self)
                 break
             }
         }
@@ -161,12 +155,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         state = .isStarting
     }
     override func didMove(to view: SKView) {
-                
         
         
-        let request = GADRequest()
-        gameViewController?.interstitial?.load(request)
         
+
         //MARK: Assigning class variables
         
         //setting didSet to isLaunched

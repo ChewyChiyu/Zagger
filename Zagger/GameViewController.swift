@@ -27,7 +27,7 @@ class GameViewController: UIViewController, GKGameCenterControllerDelegate {
     
     var gameView: SKView!
     var gameScene: SKScene!
-    
+    var gamesPlayed = 0
     // IMPORTANT: replace the red string below with your own Leaderboard ID (the one you've set in iTunes Connect)
     let LEADERBOARD_ID = "com.score.Zagger"
     
@@ -44,6 +44,9 @@ class GameViewController: UIViewController, GKGameCenterControllerDelegate {
         //Test Ad ID: ca-app-pub-3940256099942544/1033173712
         //Live Ad ID: ca-app-pub-1967902439424087/3024719452
 
+        let request = GADRequest()
+        interstitial?.load(request)
+        
         
         
         if let view = self.view as! SKView? {
@@ -69,13 +72,19 @@ class GameViewController: UIViewController, GKGameCenterControllerDelegate {
         authenticateLocalPlayer()
     }
 
-    func resetScene(){
-        
+    func resetScene(scene: GameScene){
         
         //MARK: Handle loading in an ad if possible here
-        if((interstitial?.hasBeenUsed)!){
-        interstitial = GADInterstitial(adUnitID: "ca-app-pub-1967902439424087/3024719452")
+        gamesPlayed+=1
+        
+        if(!Information.info.disabledAdvertisements && (interstitial?.isReady)! && gamesPlayed % 3 == 0){
+            interstitial?.present(fromRootViewController: scene.gameViewController!)
+            interstitial = GADInterstitial(adUnitID: "ca-app-pub-1967902439424087/3024719452")
+            let request = GADRequest()
+            interstitial?.load(request)
         }
+        
+        
         
         //clearing scene
         

@@ -104,7 +104,7 @@ class MainMenu : SKScene{
             Information.info.mainColorWhite = !Information.info.mainColorWhite
             
             //inverting colors with a scene reset
-            strongSelf.gameScene?.gameViewController?.resetScene()
+                strongSelf.gameScene?.gameViewController?.resetScene(scene: (self?.gameScene!)!)
             }else{
                 let myAlert: UIAlertController = UIAlertController(title: "Yea.. about that!", message: "Reach a highscore of 100 or over to Unlock !", preferredStyle: .alert)
                 myAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
